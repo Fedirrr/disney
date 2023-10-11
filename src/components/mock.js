@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
 
-
 const moviesArray = [
     {
         backgroundImg: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E08FE27F517A152D8174D7264F91B3B9912AA2E127F23AB430C1DD5848E1BF7C/scale?width=1200&aspectRatio=1.78&format=jpeg",
@@ -83,11 +82,6 @@ const moviesArray = [
         type: "trending",
         id: uuidv4(),
     },
-
-
-
-
-
 ]
 export default moviesArray;
 

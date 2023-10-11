@@ -1,20 +1,11 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {useParams} from "react-router-dom";
-import mock from "./mock";
 import moviesArray from "./mock";
-
 
 const Details = () => {
     const {id} = useParams();
     const [movie, setMovie] = useState({});
-
-    console.log(typeof id)
-
-    const mapMock = moviesArray.map((res) => {
-        return typeof res.id
-    })
-    console.log(mapMock)
 
     useEffect(() => {
         if (id) {
@@ -22,7 +13,6 @@ const Details = () => {
 
             if (foundMovie) {
                 setMovie(foundMovie);
-                console.log(123)
             } else {
                 console.log('Фільм не знайдено');
             }
@@ -30,7 +20,6 @@ const Details = () => {
             console.log('Параметр "id" відсутній в URL');
         }
     }, [id, moviesArray]);
-    console.log(movie)
     return (
         <Container>
             {

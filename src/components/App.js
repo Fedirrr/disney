@@ -4,6 +4,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Details from "./Details";
 import mock from "./mock";
+
 const App = () => {
   return (
     <div className="App">
@@ -20,3 +21,5 @@ const App = () => {
 }
 
 export default App;
+
+

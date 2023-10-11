@@ -11,7 +11,7 @@ const Movies = () => {
             <h4>Recommended for You</h4>
             <Content>
                 {
-                    movies.length && movies.map(({id, backgroundImg, cardImg}) => (
+                    !!movies.length && movies.map(({id, backgroundImg, cardImg}) => (
                         <Wrap key={id}>
                             <Link to={`/details/${id}`}>
                                 <img
@@ -28,9 +28,7 @@ const Movies = () => {
 
 export default Movies
 
-const Container = styled.div`
-
-`;
+const Container = styled.div``;
 
 const Content = styled.div`
   display: grid;

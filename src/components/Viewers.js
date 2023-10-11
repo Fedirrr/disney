@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-
-
 const Viewers = () => {
-
     return (
         <Container>
             <Wrap>
-                <img src="/images/viewers-disney.png" alt="" />
+                <img src='/images/viewers-disney.png' alt="" />
                 <video  autoPlay={true} loop={true} playsInline={true}>
                     <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
                 </video>
@@ -44,7 +41,7 @@ const Viewers = () => {
     )
 }
 
-export default Viewers
+export default Viewers;
 
 const Container = styled.div`
   margin-top: 30px;

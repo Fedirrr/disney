@@ -3,26 +3,24 @@ import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
 import Viewers from "./Viewers";
 import Movies from "./Movies";
-import {useDispatch, useSelector} from "react-redux";
-import {actions} from "../store/slices/slice";
+import {useDispatch} from "react-redux";
 import {setMovies} from "../store/slices/slice";
 import mock from "./mock";
 
-const Home = ({moviesArray}) => {
-
+const Home = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setMovies(mock))
-    }, [])
+    }, []);
+
     return (
         <Container>
             <ImgSlider/>
             <Viewers/>
             <Movies/>
-
         </Container>
     )
-}
+};
 
 const Container = styled.main`
   position: relative;
@@ -44,4 +42,5 @@ const Container = styled.main`
   }
 `
 
-export default Home
+export default Home;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Login = (props) => {
+const Login = () => {
     return (
         <Container>
             <Content>
@@ -31,7 +31,8 @@ const Container = styled.section`
   flex-direction: column;
   text-align: center;
   height: 100vh;
-`
+`;
+
 const Content = styled.div`
   margin-bottom: 10vh;
   width: 100%;
@@ -43,7 +44,8 @@ const Content = styled.div`
   align-items: center;
   padding: 80px 40px;
   height: 100%;
-`
+`;
+
 const BgImage = styled.div`
   height: 100%;
   background-position: top;
@@ -55,29 +57,31 @@ const BgImage = styled.div`
   right: 0;
   z-index: -1;
   background-image: url("/images/login-background.jpg");
-`
-const Cta = styled.div`
+`;
 
+const Cta = styled.div`
   max-width: 650px;
   display: flex;
   width: 100%;
   flex-direction: column;
+`;
 
-`
 const CtaLogoOne = styled.img`
   margin-bottom: 12px;
   max-width: 600px;
   min-width: 1px;
   display: block;
   width: 100%;
-`
+`;
+
 const CtaLogoTwo = styled.img`
   margin-bottom: 12px;
   max-width: 600px;
   min-width: 1px;
   display: block;
   width: 100%;
-`
+`;
+
 const SignUp = styled.div`
   cursor: pointer;
   font-weight: bold;
@@ -94,11 +98,13 @@ const SignUp = styled.div`
   &:hover {
     background-color: #0483ee;
   }
-`
+`;
+
 const Description = styled.p`
   font-size: 14px;
   letter-spacing: 1.5px;
   margin: 0 0 24px;
   line-height: 1.5;
-`
-export default Login
+`;
+
+export default Login;

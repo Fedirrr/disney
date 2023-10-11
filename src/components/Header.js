@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Header = (prop) => {
+const Header = () => {
 
     return (
         <NavBar>
@@ -126,26 +126,7 @@ const NavMenu = styled.div`
       }
     }
   }
-
-  /* @media (max-width: 768px) {
-    display: none;
-  } */
 `;
-const Login = styled.a`
-  padding: 8px 16px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border: 1px solid #f9f9f9;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
 
-  &:hover {
-    background-color: #f9f9f9;
-    color: #000;
-    border-color: transparent;
-  }
-`
-const UserImg = styled.img`
-`
 
 export default Header
