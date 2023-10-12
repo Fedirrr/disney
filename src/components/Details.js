@@ -15,10 +15,10 @@ const Details = () => {
             if (foundMovie) {
                 setMovie(foundMovie);
             } else {
-                alert('Фільм не знайдено')
+                alert('Movie not found')
             }
         } else {
-            alert('Параметр "id" відсутній в URL')
+            alert('The "id" parameter is missing from the URL')
         }
     }, [id, moviesArray]);
     return (
