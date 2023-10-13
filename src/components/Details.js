@@ -29,8 +29,7 @@ const Details = () => {
                             <img src={movie.cardImg} alt=""/>
                         </details.Background>
                         <details.ImageTitle>
-                            <img
-                                src={movie.titleImg}/>
+                            <img src={movie.titleImg}/>
                         </details.ImageTitle>
                         <details.Controls>
                             <details.PlayButton>
