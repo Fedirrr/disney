@@ -3,44 +3,44 @@ import cssStyles from "../styles/styles";
 
 const {viewers} = cssStyles
 
+const viewersArray = [
+    {
+        imgSource: "/images/viewers-disney.png",
+        videoSource: "/videos/1564674844-disney.mp4"
+    },
+    {
+        imgSource: "/images/viewers-pixar.png",
+        videoSource: "/videos/1564676714-pixar.mp4"
+    },
+    {
+        imgSource: "/images/viewers-marvel.png",
+        videoSource: "/videos/1564676115-marvel.mp4"
+    },
+    {
+        imgSource: "/images/viewers-starwars.png",
+        videoSource: "/videos/1608229455-star-wars.mp4"
+    },
+    {
+        imgSource: "/images/viewers-national.png",
+        videoSource: "/videos/1564676296-national-geographic.mp4"
+    },
+
+]
+
+
 const Viewers = () => {
-    return (
-        <viewers.Container>
+    return (<viewers.Container>
+        {viewersArray.map(({imgSource, videoSource}) => (
+
             <viewers.Wrap>
-                <img src="/images/viewers-disney.png" alt="" />
-                <video  autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
-                </video>
-            </viewers.Wrap>
-            <viewers.Wrap>
-                <img src="/images/viewers-pixar.png" alt="" />
+                <img src={imgSource} alt=""/>
                 <video autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
+                    <source src={videoSource} type="video/mp4"/>
                 </video>
             </viewers.Wrap>
-            <viewers.Wrap>
-                <img src="/images/viewers-marvel.png" alt="" />
-                <video autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/videos/1564676115-marvel.mp4" type="video/mp4" />
-                </video>
-            </viewers.Wrap>
-            <viewers.Wrap>
-                <img src="/images/viewers-starwars.png" alt="" />
-                <video autoPlay={true} loop={true} playsInline={true}>
-                    <source src="/videos/1608229455-star-wars.mp4" type="video/mp4" />
-                </video>
-            </viewers.Wrap>
-            <viewers.Wrap>
-                <img src="/images/viewers-national.png" alt="" />
-                <video autoPlay={true} loop={true} playsInline={true}>
-                    <source
-                        src="/videos/1564676296-national-geographic.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-            </viewers.Wrap>
-        </viewers.Container>
-    )
+
+        ))}
+    </viewers.Container>)
 }
 
 export default Viewers;
