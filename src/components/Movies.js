@@ -1,7 +1,7 @@
 import React from "react";
-import {selectMovie} from "../store/slices/slice";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {selectMovie} from "../store/slices/slice";
 import cssStyles from "../styles/styles";
 
 const {movie} = cssStyles

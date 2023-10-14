@@ -1,7 +1,7 @@
 import React from "react";
 import cssStyles from "../styles/styles";
-const {header} = cssStyles
 
+const {header} = cssStyles
 const Header = () => {
 
     return (

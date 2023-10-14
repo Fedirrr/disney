@@ -1,9 +1,9 @@
 import React from "react";
-import cssStyles from "../styles/styles";
 import {viewersArray} from "./mock"
+import cssStyles from "../styles/styles";
+
+
 const {viewers} = cssStyles
-
-
 const Viewers = () => {
     return (<viewers.Container>
         {viewersArray.map(({imgSource, videoSource}) => (

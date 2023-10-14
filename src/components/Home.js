@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
+import {useDispatch} from "react-redux";
 import ImgSlider from "./ImgSlider";
 import Viewers from "./Viewers";
 import Movies from "./Movies";
-import {useDispatch} from "react-redux";
 import {setMovies} from "../store/slices/slice";
 import mock from "./mock";
 import cssStyles from "../styles/styles";
