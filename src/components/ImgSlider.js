@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 const ImgSlider = () => {
+
     let settings = {
         dots: true,
         infinite:true,
@@ -28,9 +29,9 @@ const ImgSlider = () => {
             </Wrap>
         </Carousel>
     )
-}
+};
 
-export default ImgSlider
+export default ImgSlider;
 
 const Carousel = styled(Slider)`
   margin-top: 20px;
@@ -55,7 +56,7 @@ const Carousel = styled(Slider)`
     z-index: 1;
   }
 
-`
+`;
 const Wrap = styled.div`
   cursor: pointer;
   img {
@@ -72,5 +73,5 @@ const Wrap = styled.div`
       border: 4px solid rgba(249, 249, 249, 0.8);
     }
   }
-`
+`;
     
