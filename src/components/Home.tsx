@@ -4,15 +4,15 @@ import ImgSlider from "./ImgSlider";
 import Viewers from "./Viewers";
 import Movies from "./Movies";
 import {setMovies} from "../store/slices/slice";
-import mock from "./mock";
+import {moviesArray} from "./mock";
 import cssStyles from "../styles/styles";
 
 const {home} = cssStyles
 
 const Home = () => {
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(setMovies(mock))
+    useEffect(():void => {
+        dispatch(setMovies(moviesArray))
     }, []);
 
     return (
