@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./components/App";
 import {Provider} from "react-redux";
 import {store} from './store/store';
-const root = document.getElementById("root");
+const root = document.getElementById("root")!;
 const reactRoot = createRoot(root);
 
 reactRoot.render(

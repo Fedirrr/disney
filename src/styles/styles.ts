@@ -6,20 +6,21 @@ const cssStyles = {
           min-height: calc(100vh - 70px);
           padding: 70px calc(3.5vw + 5px);
           position: relative;
-        `, Background: styled.div`
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-        opacity: 0.8;
+        `,
+        Background: styled.div`
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: -1;
+          opacity: 0.8;
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         `, ImageTitle: styled.div`
         height: 30vh;
         min-height: 170px;
@@ -200,6 +201,16 @@ const cssStyles = {
             }
           }
         }
+        `,
+        Search: styled.input`
+            border: none;
+          outline: none;
+          height: 50%;
+          width: 20%;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: lightgrey;
+          color: #040714;
         `
     },
     home: {
@@ -299,6 +310,11 @@ const cssStyles = {
         `
     },
     movie: {
+        Container: styled.div`
+          min-height: calc(100vh - 70px);
+          padding: 100px calc(3.5vw + 5px);
+          position: relative;
+        `,
         Content: styled.div`
           display: grid;
           grid-gap: 25px;
@@ -412,6 +428,14 @@ const cssStyles = {
           top: 16px;
           right: 16px;
         `
+    },
+    watchList: {
+        Container: styled.div`
+          min-height: calc(100vh - 70px);
+          padding: 70px calc(3.5vw + 5px);
+          position: relative;
+        `,
+
     }
 }
 

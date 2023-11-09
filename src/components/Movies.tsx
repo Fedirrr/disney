@@ -3,8 +3,8 @@ import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {selectMovie} from "../store/slices/slice";
 import cssStyles from "../styles/styles";
+const {movie} = cssStyles;
 
-const {movie} = cssStyles
 const Movies = () => {
     const movies = useSelector(selectMovie)
     return (

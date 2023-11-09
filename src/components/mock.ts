@@ -1,15 +1,26 @@
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
-const moviesArray = [
+export interface IMovie {
+    titleImg: string;
+    backgroundImg: string;
+    subTitle: string;
+    cardImg: string;
+    description: string;
+    title: string;
+    type: string;
+    id: string;
+}
+
+export const moviesArray: IMovie[] = [
     {
         backgroundImg: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E08FE27F517A152D8174D7264F91B3B9912AA2E127F23AB430C1DD5848E1BF7C/scale?width=1200&aspectRatio=1.78&format=jpeg",
         cardImg: "https://static1.squarespace.com/static/59973af5f14aa1ab06cba333/59e65d298c56a858139215b0/5e66c7ad02c95959ada95ac7/1583854503255/Onward+%28Pixar%29.jpg?format=1500w",
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Onward_logo.svg/2560px-Onward_logo.svg.png",
         description: "In a suburban fantasy world, two teenage elf brothers, Ian and Barley Lightfoot, go on a journey to discover if there is still a little magic left out there in order to spend one last day with their father, who died when they were too young to remember him. ",
         subTitle: "2020 • 1h 42m",
-        title: "",
+        title: "onward",
         type: "trending",
-        id: uuidv4(),
+        id: "1",
     },
     {
         backgroundImg: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B54995FECE2A8C80ECD759D93713CB1D18CD1A85C4608B7809DA1A307B4F55E9/scale?width=1200&aspectRatio=1.78&format=jpeg\n",
@@ -18,9 +29,9 @@ const moviesArray = [
         description: "A Chinese mom who’s sad when her grown son leaves home gets another chance at motherhood when one of her\n" +
             "                dumplings springs to life. But she finds that nothing stays cute and small forever. ",
         subTitle: "2018 • 7m • Family, Fantasy, Kids, Animation",
-        title: "spider man",
+        title: "bao",
         type: "trending",
-        id: uuidv4(),
+        id: "2",
     },
     {
         backgroundImg: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg",
@@ -28,9 +39,9 @@ const moviesArray = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/The_Simpsons_yellow_logo.svg/2560px-The_Simpsons_yellow_logo.svg.png",
         description: " The satiric adventures of a working-class family in the misfit city of Springfield.",
         subTitle: " TV Series 1989– TV-14 22m ",
-        title: "",
+        title: "simpsons",
         type: "trending",
-        id: uuidv4(),
+        id: "3",
     },
     {
         backgroundImg: "https://www.delfontmackintosh.co.uk/imgs/shows/hamilton/generic/hamilton-title-treatment-large.jpg",
@@ -38,9 +49,9 @@ const moviesArray = [
         titleImg: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f2230f3-d395-4701-9831-457e72d51cdf/dex78je-0f303dc3-e60f-45b5-aa8f-30c970973924.png/v1/fill/w_1280,h_426/disney_hamilton_by_appleberries22_dex78je-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDI2IiwicGF0aCI6IlwvZlwvMWYyMjMwZjMtZDM5NS00NzAxLTk4MzEtNDU3ZTcyZDUxY2RmXC9kZXg3OGplLTBmMzAzZGMzLWU2MGYtNDViNS1hYThmLTMwYzk3MDk3MzkyNC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.27MPPCnHnycoOPpWdn3U-nJnlChlH9yC0uXUrLwkZcU",
         description: "The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast.",
         subTitle: " 2020 PG-13 2h 40m",
-        title: "",
+        title: "hamilton",
         type: "trending",
-        id: uuidv4(),
+        id: "4",
     },
     {
         backgroundImg: " https://thecosmiccircus.com/wp-content/uploads/2022/06/tobeyyyyy-e1654915118777.jpg",
@@ -58,7 +69,7 @@ const moviesArray = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marvel%27s_The_Avengers_logo.svg/1621px-Marvel%27s_The_Avengers_logo.svg.png",
         description: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.. ",
         subTitle: "2012 PG-13 2h 23m",
-        title: "spider man",
+        title: "avangers",
         type: "trending",
         id: uuidv4(),
     },
@@ -68,7 +79,7 @@ const moviesArray = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marvel%27s_The_Avengers_logo.svg/1621px-Marvel%27s_The_Avengers_logo.svg.png",
         description: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
         subTitle: " 2018 PG-13 2h 29m",
-        title: "",
+        title: "avangers 2",
         type: "trending",
         id: uuidv4(),
     },
@@ -78,12 +89,15 @@ const moviesArray = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marvel%27s_The_Avengers_logo.svg/1621px-Marvel%27s_The_Avengers_logo.svg.png",
         description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. ",
         subTitle: "2021 PG-13 2h 28m",
-        title: "spider man",
+        title: "avangers 3",
         type: "trending",
         id: uuidv4(),
     },
 ];
-const viewersArray = [
+export const viewersArray: {
+    imgSource: string,
+    videoSource: string
+}[] = [
     {
         imgSource: "/images/viewers-disney.png",
         videoSource: "/videos/1564674844-disney.mp4"
@@ -107,7 +121,5 @@ const viewersArray = [
 
 ];
 
-export default moviesArray;
-export {viewersArray};
 
 
