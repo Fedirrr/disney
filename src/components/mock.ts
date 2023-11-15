@@ -61,7 +61,7 @@ export const moviesArray: IMovie[] = [
         subTitle: "2021 PG-13 2h 28m",
         title: "spider man",
         type: "trending",
-        id: uuidv4(),
+        id: "5",
     },
     {
         backgroundImg: "https://www.pluggedin.com/wp-content/uploads/2019/12/the-avengers-review-image-1200x688.jpg",
@@ -71,7 +71,7 @@ export const moviesArray: IMovie[] = [
         subTitle: "2012 PG-13 2h 23m",
         title: "avangers",
         type: "trending",
-        id: uuidv4(),
+        id: "6",
     },
     {
         backgroundImg: "https://cdn.marvel.com/content/1x/avengersinfinitywar_lob_mas_hlf_01_3.jpg",
@@ -81,7 +81,7 @@ export const moviesArray: IMovie[] = [
         subTitle: " 2018 PG-13 2h 29m",
         title: "avangers 2",
         type: "trending",
-        id: uuidv4(),
+        id: "7",
     },
     {
         backgroundImg: " https://cdn.vox-cdn.com/thumbor/qhzGnIjuTspg-kOKDqEmRyuZl48=/0x376:1688x1220/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
@@ -91,7 +91,7 @@ export const moviesArray: IMovie[] = [
         subTitle: "2021 PG-13 2h 28m",
         title: "avangers 3",
         type: "trending",
-        id: uuidv4(),
+        id: "8",
     },
 ];
 export const viewersArray: {

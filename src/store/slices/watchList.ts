@@ -23,7 +23,7 @@ export const watchlistSlice = createSlice({
     reducers: {
         addToWatchlist: (state, action) => {
             state.watchlistItems.push(action.payload);
-            localStorage.setItem("watchListItems", JSON.stringify(state.watchlistItems.map(item => item)))
+            localStorage.setItem("watchListItems", JSON.stringify(state.watchlistItems))
         },
         deleteFromWatchlist: (state, action) => {
             state.watchlistItems = state.watchlistItems.filter(item => item.id !== action.payload);
