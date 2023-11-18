@@ -18,7 +18,6 @@ function App () {
                 <Route path="/details/:id" element={<Details />} />
                 <Route path="/watchlist" element={<WatchList />} />
                 <Route path="/movie" element={<Movie />} />
-                {/*<Route path="/movie/search" element={<Movie />} />*/}
             </Routes>
         </Router>
     </div>

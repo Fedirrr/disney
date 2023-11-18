@@ -1,11 +1,10 @@
 import React, {useState, ChangeEvent} from "react";
 import cssStyles from "../styles/styles";
 import {Link} from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate} from "react-router-dom";
 
 const {header} = cssStyles
 const Header = () => {
-
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -15,9 +14,12 @@ const Header = () => {
         navigate(`/movie?search=${searchTerm}`);
         setSearchTerm("")
     };
-
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    };
     return (
-
         <header.NavBar>
             <header.NavImg>
                 <Link to="/">
@@ -38,19 +40,17 @@ const Header = () => {
                     <span>MOVIE</span>
                 </Link>
             </header.NavMenu>
-            <form style={{width: "100%",
-                display: "contents"}}>
-
+            <header.Form>
                 <header.Search type="search" placeholder="Search"
                                value={searchTerm}
                                autoComplete="off"
                                onChange={handleInputChange}
+                               onKeyPress={handleKeyPress}
                 />
-                <button type="button" onClick={handleSearch}>
+                <button onClick={handleSearch}>
                     find
                 </button>
-
-            </form>
+            </header.Form>
 
         </header.NavBar>
     )

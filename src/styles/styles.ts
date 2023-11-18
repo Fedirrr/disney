@@ -117,6 +117,10 @@ const cssStyles = {
         `,
     },
     header: {
+        Form: styled.div`
+          width: 100%;
+          display: contents;
+        `,
         NavBar: styled.nav`
           position: fixed;
           top: 0;
