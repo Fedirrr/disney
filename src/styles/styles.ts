@@ -121,6 +121,14 @@ const cssStyles = {
           width: 100%;
           display: contents;
         `,
+        FormBtn: styled.button`
+          margin-left: 10px;
+          height: 50%;
+          border-radius: 4px;
+          width: 4%;
+          outline: none;
+          border: none;
+        `,
         NavBar: styled.nav`
           position: fixed;
           top: 0;

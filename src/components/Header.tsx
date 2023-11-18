@@ -47,9 +47,10 @@ const Header = () => {
                                onChange={handleInputChange}
                                onKeyPress={handleKeyPress}
                 />
-                <button onClick={handleSearch}>
-                    find
-                </button>
+                <header.FormBtn onClick={handleSearch}
+                disabled={searchTerm ? false : true}>
+                    Find
+                </header.FormBtn>
             </header.Form>
 
         </header.NavBar>
