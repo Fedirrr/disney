@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import ImgSlider from "./ImgSlider";
 import Viewers from "./Viewers";
-import Movies from "./Movies";
+import HomeMovies from "./HomeMovies";
 import {setMovies} from "../store/slices/slice";
 import {moviesArray} from "./mock";
 import cssStyles from "../styles/styles";
@@ -19,7 +19,7 @@ const Home = () => {
         <home.Container>
             <ImgSlider/>
             <Viewers/>
-            <Movies/>
+            <HomeMovies/>
         </home.Container>
     )
 };

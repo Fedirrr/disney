@@ -1,28 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, {useState, ChangeEvent} from "react";
 import cssStyles from "../styles/styles";
 import {Link} from "react-router-dom";
-import {selectListItem} from "../store/slices/watchList";
-import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 const {header} = cssStyles
 const Header = () => {
-    const searchMovie = useSelector(selectListItem)
-    const [searchQuery, setSearchQuery] = useState(''); // Поточний рядок пошуку
-    const [searchResults, setSearchResults] = useState([]); // Результати пошуку
-
-    function performSearch(query:string) {
-        const results:any = searchMovie.filter(movie => {
-            return movie.title.toLowerCase().includes(query.toLowerCase());
-        });
-        setSearchResults(results);
-    }
-
-    useEffect(() => {
-        performSearch(searchQuery);
-    }, [searchQuery]);
-
+    const navigate = useNavigate();
+    const [searchTerm, setSearchTerm] = useState("");
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value);
+    };
+    const handleSearch = () => {
+        navigate(`/movie?search=${searchTerm}`);
+        setSearchTerm("")
+    };
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    };
     return (
-
         <header.NavBar>
             <header.NavImg>
                 <Link to="/">
@@ -39,15 +36,23 @@ const Header = () => {
                     <span>WATCHLIST</span>
                 </Link>
                 <Link to="/movie">
-                    <img src="/images/movie-icon.svg" alt="movie"/>
+                    <img src="/images/movie-icon.svg" alt="movies"/>
                     <span>MOVIE</span>
                 </Link>
             </header.NavMenu>
+            <header.Form>
+                <header.Search type="search" placeholder="Search"
+                               value={searchTerm}
+                               autoComplete="off"
+                               onChange={handleInputChange}
+                               onKeyPress={handleKeyPress}
+                />
+                <header.FormBtn onClick={handleSearch}
+                disabled={searchTerm ? false : true}>
+                    Find
+                </header.FormBtn>
+            </header.Form>
 
-            <header.Search type="text" placeholder="Search"
-                           value={searchQuery}
-                           onChange={(e:any) => setSearchQuery(e.target.value)}
-            />
         </header.NavBar>
     )
 }

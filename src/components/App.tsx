@@ -7,7 +7,7 @@ import Details from "./Details";
 import WatchList from "./WatchList";
 import Movie from "./Movie";
 
-const App = () => {
+function App () {
   return (
     <div className="App">
         <Router>

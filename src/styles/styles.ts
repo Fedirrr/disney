@@ -117,6 +117,18 @@ const cssStyles = {
         `,
     },
     header: {
+        Form: styled.div`
+          width: 100%;
+          display: contents;
+        `,
+        FormBtn: styled.button`
+          margin-left: 10px;
+          height: 50%;
+          border-radius: 4px;
+          width: 4%;
+          outline: none;
+          border: none;
+        `,
         NavBar: styled.nav`
           position: fixed;
           top: 0;
@@ -316,6 +328,7 @@ const cssStyles = {
           position: relative;
         `,
         Content: styled.div`
+          padding: 75px;
           display: grid;
           grid-gap: 25px;
           grid-template-columns: repeat(4, minmax(0, 1fr));

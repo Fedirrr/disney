@@ -5,7 +5,7 @@ import {selectMovie} from "../store/slices/slice";
 import cssStyles from "../styles/styles";
 const {movie} = cssStyles;
 
-const Movies = () => {
+const HomeMovies = () => {
     const movies = useSelector(selectMovie)
     return (
         <div>
@@ -27,7 +27,7 @@ const Movies = () => {
     )
 }
 
-export default Movies
+export default HomeMovies
 
 
 
