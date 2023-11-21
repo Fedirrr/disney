@@ -1,20 +1,46 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {IMovie} from "../../components/mock";
+import { createSlice } from "@reduxjs/toolkit";
+import { IMovie } from "../../components/mock";
 
-const savedData = localStorage.getItem("watchListItems");
-const list = savedData !== null ? JSON.parse(savedData) : [];
+// interface IWatchListInitialState {
+//     watchlistItems: IMovie[] ;
+// }
+//
+// interface IWatchListState {
+//     watchList: IWatchListInitialState;
+// }
+//
+// const initialState: IWatchListInitialState = {
+//     watchlistItems: [],
+// };
+//
+// export const watchlistSlice = createSlice({
+//     name: "watchList",
+//     initialState,
+//     reducers: {
+//         addToWatchlist: (state, action) => {
+//             if (state.watchlistItems) {
+//                 state.watchlistItems.push(action.payload);
+//             }
+//         }
+//         ,
+//         deleteFromWatchlist: (state, action) => {
+//             if (state.watchlistItems) {
+//                 state.watchlistItems = state.watchlistItems.filter(item => item.id !== action.payload);
+//             }
+//         },
+//     },
+// });
+
 interface IWatchListInitialState {
-    watchlistItems : IMovie[],
+    watchlistItems: IMovie[] | null;
 }
 
 interface IWatchListState {
-    watchList: {
-        watchlistItems: IMovie[]
-    }
+    watchList: IWatchListInitialState;
 }
 
-const initialState:IWatchListInitialState = {
-    watchlistItems : list,
+const initialState: IWatchListInitialState = {
+    watchlistItems: null,
 };
 
 export const watchlistSlice = createSlice({
@@ -22,14 +48,18 @@ export const watchlistSlice = createSlice({
     initialState,
     reducers: {
         addToWatchlist: (state, action) => {
-            state.watchlistItems.push(action.payload);
-            localStorage.setItem("watchListItems", JSON.stringify(state.watchlistItems))
-        },
+            if (state.watchlistItems) {
+                state.watchlistItems.push(action.payload);
+            }
+        }
+        ,
         deleteFromWatchlist: (state, action) => {
-            state.watchlistItems = state.watchlistItems.filter(item => item.id !== action.payload);
+            if (state.watchlistItems) {
+                state.watchlistItems = state.watchlistItems.filter(item => item.id !== action.payload);
+            }
         },
-    }
-})
+    },
+});
 
-export const {addToWatchlist,deleteFromWatchlist} = watchlistSlice.actions
-export const selectListItem = (state:IWatchListState) => state.watchList.watchlistItems;
+export const { addToWatchlist, deleteFromWatchlist } = watchlistSlice.actions;
+export const selectListItem = (state: IWatchListState) => state.watchList.watchlistItems;

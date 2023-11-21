@@ -6,6 +6,7 @@ import Home from "./Home";
 import Details from "./Details";
 import WatchList from "./WatchList";
 import Movie from "./Movie";
+import SliderDetails from "./SliderDetails";
 
 function App () {
   return (
@@ -16,6 +17,7 @@ function App () {
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/details/:id" element={<Details />} />
+                <Route path="/sliderDetails/:id" element={<SliderDetails />} />
                 <Route path="/watchlist" element={<WatchList />} />
                 <Route path="/movie" element={<Movie />} />
             </Routes>

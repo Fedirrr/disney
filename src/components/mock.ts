@@ -1,4 +1,3 @@
-import {v4 as uuidv4} from 'uuid';
 
 export interface IMovie {
     titleImg: string;
@@ -94,6 +93,41 @@ export const moviesArray: IMovie[] = [
         id: "8",
     },
 ];
+export interface ISliderDetails {
+    title:string ,
+    imgSource: string,
+    id: string
+}
+export const sliderArray: {
+    title:string ,
+    imgSource: string,
+    id: string
+}[] = [
+    {
+        title:"1" ,
+        imgSource: "/images/slider-badging.jpg",
+        id:"1"
+    },
+    {
+        title:"2" ,
+        imgSource: "/images/slider-scale.jpg",
+        id:"2"
+    },
+    {
+        title:"3" ,
+        imgSource:"/images/slider-badag.jpg"  ,
+        id:"3"
+    },
+
+    {
+        title:"4" ,
+        imgSource: "/images/slider-scales.jpg",
+        id:"4"
+    },
+
+
+
+]
 export const viewersArray: {
     imgSource: string,
     videoSource: string

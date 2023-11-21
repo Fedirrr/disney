@@ -130,6 +130,7 @@ const cssStyles = {
           border: none;
         `,
         NavBar: styled.nav`
+          margin-bottom: 1000px;
           position: fixed;
           top: 0;
           left: 0;
@@ -322,13 +323,20 @@ const cssStyles = {
         `
     },
     movie: {
+
         Container: styled.div`
           min-height: calc(100vh - 70px);
           padding: 100px calc(3.5vw + 5px);
           position: relative;
         `,
+        ContentBlock: styled.div`
+          padding: 100px 50px;
+          display: grid;
+          grid-gap: 25px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+         
+        `,
         Content: styled.div`
-          padding: 75px;
           display: grid;
           grid-gap: 25px;
           grid-template-columns: repeat(4, minmax(0, 1fr));

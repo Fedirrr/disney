@@ -5,6 +5,7 @@ import Alert from "./Alert";
 import {moviesArray, IMovie} from "./mock";
 import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchList";
 import cssStyles from "../styles/styles";
+import {fetchAddToFavorites} from "../api/movies";
 
 const Details = () => {
 
@@ -16,26 +17,25 @@ const Details = () => {
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
 
-
-    useEffect(() => {
-        const foundListItem = watchItems.find(item => item.id === id);
-        setIsFavoriteAdded(!!foundListItem)
-    }, [id, watchItems]);
-
     useEffect(() => {
         if (id) {
-            const foundMovie = moviesArray.find(movie => movie.id === id);
-
+            const foundMovie = moviesArray.find((movie) => movie.id === id);
             if (foundMovie) {
                 setMovie(foundMovie);
             }
         }
     }, [id]);
 
+    useEffect(() => {
+        const foundListItem = watchItems?.find((item) => item.id === id);
+        setIsFavoriteAdded(!!foundListItem);
+    }, [id, watchItems]);
 
-    function handleClick() {
+    function handleClick(): void {
         if (movie && !isFavoriteAdded) {
+            console.log(movie)
             dispatch(addToWatchlist(movie));
+
         } else if (isFavoriteAdded) {
             dispatch(deleteFromWatchlist(id));
         }

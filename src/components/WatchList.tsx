@@ -11,10 +11,10 @@ function WatchList() {
 
     return (
         <movie.Container>
-            {!!watchItems.length ?
+            {!!watchItems?.length ?
                 (<movie.Content>
                     {
-                        !!watchItems.length && watchItems.map(({id, backgroundImg, cardImg}) => (
+                        !!watchItems?.length && watchItems.map(({id, backgroundImg, cardImg}) => (
                             <movie.Wrap key={id}>
                                 <Link to={`/details/${id}`}>
                                     <img

@@ -1,13 +1,16 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {IMovie} from "../../components/mock";
 
-interface IState {
-    movie: {
-        movies: IMovie[]
-    }
+
+interface IMovieInitialState {
+    movies : IMovie[] | null;
 }
-const initialState = {
-    movies: [],
+
+interface IState {
+    movie: IMovieInitialState
+}
+const initialState: IMovieInitialState = {
+    movies: null,
 };
 
 

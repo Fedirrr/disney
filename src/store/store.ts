@@ -1,6 +1,7 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {reducer as movieReducer} from "./slices/slice";
-import {watchlistSlice} from "./slices/watchList";
+import { configureStore } from "@reduxjs/toolkit";
+import { reducer as movieReducer } from "./slices/slice";
+import { watchlistSlice } from "./slices/watchList";
+import { sliderListSlice } from "./slices/sliderDetailsSlice";
 
 
 
@@ -8,6 +9,7 @@ import {watchlistSlice} from "./slices/watchList";
 export const store = configureStore({
     reducer: {
         movie: movieReducer,
-        watchList: watchlistSlice.reducer
+        watchList: watchlistSlice.reducer,
+        sliderDetails:sliderListSlice.reducer
     }
 })
