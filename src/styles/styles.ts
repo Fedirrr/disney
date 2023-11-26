@@ -448,7 +448,39 @@ const cssStyles = {
           padding: 70px calc(3.5vw + 5px);
           position: relative;
         `,
-
+    },
+    modal: {
+        Background: styled.div`
+          width: 100%;
+          height: 100%;
+          background-color: rgb(0 0 0 / 80%);
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        `,
+        Container: styled.div`
+          width: 60%;
+          height: 55%;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          padding: 25px;
+        `,
+        Title: styled.div`
+          display: flex;
+          justify-content: space-between;
+          padding: 0 5px;
+        `,
+        TitleBtn:styled.button`
+          background-color: transparent;
+          color: whitesmoke;
+          border: none;
+          font-size: 25px;
+          cursor: pointer;
+        `,
     }
 }
 
