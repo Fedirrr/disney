@@ -130,10 +130,11 @@ const cssStyles = {
           border: none;
         `,
         NavBar: styled.nav`
+          margin-bottom: 1000px;
           position: fixed;
           top: 0;
           left: 0;
-          right: 0;
+          width: 100%;
           height: 70px;
           background-color: #090b13;
           display: flex;
@@ -160,8 +161,7 @@ const cssStyles = {
         flex-flow: row nowrap;
         height: 100%;
         justify-content: flex-end;
-        margin: 0px;
-        padding: 0px;
+        padding: 0;
         position: relative;
         margin-right: auto;
         margin-left: 25px;
@@ -215,7 +215,7 @@ const cssStyles = {
         }
         `,
         Search: styled.input`
-            border: none;
+          border: none;
           outline: none;
           height: 50%;
           width: 20%;
@@ -322,13 +322,20 @@ const cssStyles = {
         `
     },
     movie: {
+
         Container: styled.div`
           min-height: calc(100vh - 70px);
           padding: 100px calc(3.5vw + 5px);
           position: relative;
         `,
+        ContentBlock: styled.div`
+          padding: 100px 50px;
+          display: grid;
+          grid-gap: 25px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        `,
         Content: styled.div`
-          padding: 75px;
           display: grid;
           grid-gap: 25px;
           grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -448,6 +455,7 @@ const cssStyles = {
           padding: 70px calc(3.5vw + 5px);
           position: relative;
         `,
+
     },
     modal: {
         Background: styled.div`
@@ -482,6 +490,7 @@ const cssStyles = {
           cursor: pointer;
         `,
     }
+
 }
 
 export default cssStyles;
