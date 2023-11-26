@@ -4,6 +4,7 @@ import {setMovies} from '../store/slices/slice';
 import {useDispatch} from 'react-redux';
 import cssStyles from '../styles/styles';
 import {IMovie, moviesArray} from "./mock";
+import {fetchMovies} from "../api/movies";
 
 const { movie } = cssStyles;
 
@@ -14,9 +15,10 @@ function Movie() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setMovies(moviesArray))
-    }, []);
-
+        fetchMovies().then(res => {
+            dispatch(setMovies(res))
+        })
+    }, [dispatch]);
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const searchTerm = searchParams.get('search');
@@ -35,7 +37,7 @@ function Movie() {
     }, [location.search]);
 
     return (
-        <movie.Content>
+        <movie.ContentBlock>
             {moviesArray.length === 0 ? (
                 moviesArray.map(({ id, backgroundImg, cardImg }) => (
                     <movie.Wrap key={id}>
@@ -57,7 +59,7 @@ function Movie() {
                     ))
                 )
             )}
-        </movie.Content>
+        </movie.ContentBlock>
     );
 }
 export default Movie;
