@@ -1,10 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import Alert from "./Alert";
 import {moviesArray, IMovie} from "./mock";
 import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchList";
 import cssStyles from "../styles/styles";
+import Modal from "./Modal";
 
 const Details = () => {
 
@@ -15,27 +16,28 @@ const Details = () => {
 
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
+    const [modal, setModal] = useState(false);
 
-
-    useEffect(() => {
-        const foundListItem = watchItems.find(item => item.id === id);
-        setIsFavoriteAdded(!!foundListItem)
-    }, [id, watchItems]);
 
     useEffect(() => {
         if (id) {
-            const foundMovie = moviesArray.find(movie => movie.id === id);
-
+            const foundMovie = moviesArray.find((movie) => movie.id === id);
             if (foundMovie) {
                 setMovie(foundMovie);
             }
         }
     }, [id]);
 
+    useEffect(() => {
+        const foundListItem = watchItems?.find((item) => item.id === id);
+        setIsFavoriteAdded(!!foundListItem);
+    }, [id, watchItems]);
 
-    function handleClick() {
+    function handleClick(): void {
         if (movie && !isFavoriteAdded) {
+            console.log(movie)
             dispatch(addToWatchlist(movie));
+
         } else if (isFavoriteAdded) {
             dispatch(deleteFromWatchlist(id));
         }
@@ -45,6 +47,8 @@ const Details = () => {
         <>
             {movie ? (
                 <details.Container>
+                    {modal && <Modal closeModal={setModal} moviesList={movie}/>}
+
                     <details.Background>
                         <img src={movie.cardImg} alt="cardImg"/>
                     </details.Background>
@@ -56,7 +60,8 @@ const Details = () => {
                             <img src="/images/play-icon-black.png"/>
                             <span>PLAY</span>
                         </details.PlayButton>
-                        <details.TrailerButton>
+                        <details.TrailerButton
+                            onClick={() => setModal(!modal)}>
                             <img src="/images/play-icon-white.png"/>
                             <span>Trailer</span>
                         </details.TrailerButton>
