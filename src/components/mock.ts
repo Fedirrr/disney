@@ -1,4 +1,3 @@
-import {v4 as uuidv4} from 'uuid';
 
 export interface IMovie {
     titleImg: string;
@@ -8,6 +7,8 @@ export interface IMovie {
     description: string;
     title: string;
     type: string;
+    trailerTitle: string;
+    trailerSource: string;
     id: string;
 }
 
@@ -20,6 +21,8 @@ export const moviesArray: IMovie[] = [
         subTitle: "2020 • 1h 42m",
         title: "onward",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Onward Official Trailer",
         id: "1",
     },
     {
@@ -31,7 +34,10 @@ export const moviesArray: IMovie[] = [
         subTitle: "2018 • 7m • Family, Fantasy, Kids, Animation",
         title: "bao",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Bao Official Trailer",
         id: "2",
+
     },
     {
         backgroundImg: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6EA416AD3B15FCC1BADC817A932A57FFF707556DB2233FFCB4CFEB7C8EEDE23C/scale?width=400&aspectRatio=1.78&format=jpeg",
@@ -41,6 +47,8 @@ export const moviesArray: IMovie[] = [
         subTitle: " TV Series 1989– TV-14 22m ",
         title: "simpsons",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"The Simpsons Official Trailer",
         id: "3",
     },
     {
@@ -51,6 +59,8 @@ export const moviesArray: IMovie[] = [
         subTitle: " 2020 PG-13 2h 40m",
         title: "hamilton",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Hamilton Official Trailer",
         id: "4",
     },
     {
@@ -61,6 +71,8 @@ export const moviesArray: IMovie[] = [
         subTitle: "2021 PG-13 2h 28m",
         title: "spider man",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Spider Man Official Trailer",
         id: "5",
     },
     {
@@ -69,8 +81,10 @@ export const moviesArray: IMovie[] = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marvel%27s_The_Avengers_logo.svg/1621px-Marvel%27s_The_Avengers_logo.svg.png",
         description: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.. ",
         subTitle: "2012 PG-13 2h 23m",
-        title: "avangers",
+        title: "avengers",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Avengers Official Trailer",
         id: "6",
     },
     {
@@ -79,8 +93,10 @@ export const moviesArray: IMovie[] = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marvel%27s_The_Avengers_logo.svg/1621px-Marvel%27s_The_Avengers_logo.svg.png",
         description: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
         subTitle: " 2018 PG-13 2h 29m",
-        title: "avangers 2",
+        title: "avengers 2",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Avengers Official Trailer",
         id: "7",
     },
     {
@@ -89,11 +105,48 @@ export const moviesArray: IMovie[] = [
         titleImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Marvel%27s_The_Avengers_logo.svg/1621px-Marvel%27s_The_Avengers_logo.svg.png",
         description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. ",
         subTitle: "2021 PG-13 2h 28m",
-        title: "avangers 3",
+        title: "avengers 3",
         type: "trending",
+        trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
+        trailerTitle:"Avengers Official Trailer",
         id: "8",
     },
 ];
+export interface ISliderDetails {
+    title:string ,
+    imgSource: string,
+    id: string
+}
+export const sliderArray: {
+    title:string ,
+    imgSource: string,
+    id: string
+}[] = [
+    {
+        title:"1" ,
+        imgSource: "/images/slider-badging.jpg",
+        id:"1"
+    },
+    {
+        title:"2" ,
+        imgSource: "/images/slider-scale.jpg",
+        id:"2"
+    },
+    {
+        title:"3" ,
+        imgSource:"/images/slider-badag.jpg"  ,
+        id:"3"
+    },
+
+    {
+        title:"4" ,
+        imgSource: "/images/slider-scales.jpg",
+        id:"4"
+    },
+
+
+
+]
 export const viewersArray: {
     imgSource: string,
     videoSource: string

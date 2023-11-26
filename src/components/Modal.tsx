@@ -10,7 +10,6 @@ interface ModalProps {
 
 function Modal({closeModal,moviesList}: ModalProps) {
     const {modal} = cssStyles
-    console.log(moviesList)
     return (
         <modal.Background>
             <modal.Container >
