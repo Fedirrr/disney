@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectSliderDetails, setSliderDetails} from "../store/slices/sliderDetailsSlice";
 import {fetchSliderDetailsById} from "../api/movies";
 
-function SliderDetails() {
+const SliderDetails = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const sliderDetails = useSelector(selectSliderDetails);
