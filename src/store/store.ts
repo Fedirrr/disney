@@ -10,6 +10,6 @@ export const store = configureStore({
     reducer: {
         movie: movieReducer,
         watchList: watchlistSlice.reducer,
-        sliderDetails:sliderListSlice.reducer
+        sliderDetails:sliderListSlice.reducer,
     }
 })

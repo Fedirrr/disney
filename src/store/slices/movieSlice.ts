@@ -4,9 +4,10 @@ import {IState} from "../types/redux";
 
 
 interface IMovieInitialState {
-    movies: IMovie[] | null
+    movies : IMovie[] | null;
 }
-const initialState:IMovieInitialState = {
+
+const initialState: IMovieInitialState = {
     movies: null,
 };
 
@@ -24,4 +25,3 @@ export const movieSlice = createSlice({
 export const { reducer} = movieSlice;
 export const {setMovies} = movieSlice.actions;
 export const selectMovie = (state:IState) => state.movie.movies;
-

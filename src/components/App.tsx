@@ -6,7 +6,7 @@ import Home from "./Home";
 import Details from "./Details";
 import WatchList from "./WatchList";
 import Movie from "./Movie";
-import SliderDetails from "./sliderDetails";
+import SliderDetails from "./SliderDetails";
 
 function App() {
     return (

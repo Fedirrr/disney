@@ -2,8 +2,9 @@ import {createSlice} from "@reduxjs/toolkit";
 import {ISliderDetails} from "../../components/mock";
 import {IState} from "../types/redux";
 
+
 interface ISliderListInitialState {
-    item : ISliderDetails[] | null;
+    item : ISliderDetails | null;
 }
 
 const initialState:ISliderListInitialState = {

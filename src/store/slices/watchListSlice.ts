@@ -1,15 +1,18 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {IMovie} from "../../components/mock";
-import {IState} from "../types/redux";
+import { createSlice } from "@reduxjs/toolkit";
+import { IMovie } from "../../components/mock";
+import { IState } from "../types/redux";
 
-const savedData = localStorage.getItem("watchListItems");
-const list = savedData !== null ? JSON.parse(savedData) : [];
+const getLocalStorageData = () => {
+    const localStorageData = localStorage.getItem("watchlist");
+    return localStorageData ? JSON.parse(localStorageData) : [];
+};
+
 interface IWatchListInitialState {
-    watchlistItems : IMovie[],
+    watchlistItems: IMovie[];
 }
 
-const initialState:IWatchListInitialState = {
-    watchlistItems : list,
+const initialState: IWatchListInitialState = {
+    watchlistItems: getLocalStorageData(),
 };
 
 export const watchlistSlice = createSlice({
@@ -18,13 +21,14 @@ export const watchlistSlice = createSlice({
     reducers: {
         addToWatchlist: (state, action) => {
             state.watchlistItems.push(action.payload);
-            localStorage.setItem("watchListItems", JSON.stringify(state.watchlistItems))
+            localStorage.setItem("watchlist", JSON.stringify(state.watchlistItems));
         },
         deleteFromWatchlist: (state, action) => {
             state.watchlistItems = state.watchlistItems.filter(item => item.id !== action.payload);
+            localStorage.setItem("watchlist", JSON.stringify(state.watchlistItems));
         },
-    }
-})
+    },
+});
 
-export const {addToWatchlist,deleteFromWatchlist} = watchlistSlice.actions
-export const selectListItem = (state:IState) => state.watchList.watchlistItems;
+export const { addToWatchlist, deleteFromWatchlist } = watchlistSlice.actions;
+export const selectListItem = (state: IState) => state.watchList.watchlistItems;

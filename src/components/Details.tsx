@@ -1,14 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import Alert from "./Alert";
 import {moviesArray, IMovie} from "./mock";
-import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchListSlice"
+import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchListSlice";
 import cssStyles from "../styles/styles";
 import Modal from "./Modal";
 
 const Details = () => {
-
     const {details} = cssStyles;
     const {id} = useParams();
     const dispatch = useDispatch()
@@ -17,8 +16,6 @@ const Details = () => {
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
     const [modal, setModal] = useState(false);
-
-
     useEffect(() => {
         if (id) {
             const foundMovie = moviesArray.find((movie) => movie.id === id);
@@ -38,17 +35,15 @@ const Details = () => {
             dispatch(addToWatchlist(movie));
 
         } else if (isFavoriteAdded) {
-            dispatch(deleteFromWatchlist(id));
+            dispatch(deleteFromWatchlist(movie?.id));
         }
     }
 
-    console.log(movie)
     return (
         <>
             {movie ? (
                 <details.Container>
-                    {modal && <Modal closeModal={setModal} moviesList={movie}/>}
-
+                    {<Modal closeModal={setModal} moviesList={movie}/>}
                     <details.Background>
                         <img src={movie.cardImg} alt="cardImg"/>
                     </details.Background>
@@ -60,10 +55,10 @@ const Details = () => {
                             <img src="/images/play-icon-black.png"/>
                             <span>PLAY</span>
                         </details.PlayButton>
-                        <details.TrailerButton
-                            onClick={() => setModal(!modal)}>
+                        <details.TrailerButton>
                             <img src="/images/play-icon-white.png"/>
-                            <span>Trailer</span>
+                            <span
+                            onClick={() => setModal(!modal)}>Trailer</span>
                         </details.TrailerButton>
                         <details.AddButton>
                             <span onClick={handleClick}>
@@ -87,6 +82,3 @@ const Details = () => {
 }
 
 export default Details
-
-
-
