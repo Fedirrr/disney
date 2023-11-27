@@ -19,9 +19,9 @@ const ImgSlider = () => {
             fetchSliderDetailsById(id).then(res => {
                 dispatch(setSliderDetails(res));
             });
-
         }
     }, [id, dispatch]);
+
     let settings = {
         dots: true,
         infinite: true,

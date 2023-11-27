@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer as movieReducer } from "./slices/slice";
-import { watchlistSlice } from "./slices/watchList";
+import { watchlistSlice } from "./slices/watchListSlice";
 import { sliderListSlice } from "./slices/sliderDetailsSlice";
 
 

@@ -3,9 +3,8 @@ import {useParams} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {selectSliderDetails,} from "../store/slices/sliderDetailsSlice";
 import cssStyles from "../styles/styles";
-import {addToWatchlist, deleteFromWatchlist} from "../store/slices/watchList";
+import {addToWatchlist, deleteFromWatchlist} from "../store/slices/watchListSlice";
 import {ISliderDetails, sliderArray} from "./mock";
-import Modal from "./Modal";
 import SliderModal from "./SliderModal";
 
 const SliderDetails = () => {
@@ -41,7 +40,6 @@ const SliderDetails = () => {
         }
     }
 
-    console.log(movie)
     return (
         <div>
             {movie ? (
@@ -91,4 +89,4 @@ const SliderDetails = () => {
     );
 }
 
-export default SliderDetails;
+export default SliderDetails

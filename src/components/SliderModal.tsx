@@ -3,6 +3,7 @@ import {DefaultPlayer as Video} from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 import { ISliderDetails} from "./mock";
 import cssStyles from "../styles/styles";
+
 interface ModalProps {
     closeModal: (arg: boolean) => void;
     sliderList: ISliderDetails;
