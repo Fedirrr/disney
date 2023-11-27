@@ -1,4 +1,4 @@
-import {sliderArray, moviesArray, IMovie} from "../components/mock";
+import {sliderArray, moviesArray} from "../components/mock";
 
 
 export const fetchSliderDetailsById =  async (sliderId: string) => {

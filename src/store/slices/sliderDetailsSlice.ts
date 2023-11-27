@@ -3,7 +3,7 @@ import {ISliderDetails} from "../../components/mock";
 
 // interface for initialState
 interface ISliderListInitialState {
-    item : ISliderDetails | null;
+    item : ISliderDetails[] | null;
 }
 
 // interface for selectSliderMovie

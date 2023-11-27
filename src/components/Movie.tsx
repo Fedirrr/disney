@@ -19,6 +19,7 @@ function Movie() {
             dispatch(setMovies(res))
         })
     }, [dispatch]);
+
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const searchTerm = searchParams.get('search');

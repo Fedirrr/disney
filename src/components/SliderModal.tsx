@@ -1,21 +1,21 @@
 import React from "react";
 import {DefaultPlayer as Video} from 'react-html5video';
 import 'react-html5video/dist/styles.css';
-import {IMovie} from "./mock";
+import { ISliderDetails} from "./mock";
 import cssStyles from "../styles/styles";
 interface ModalProps {
     closeModal: (arg: boolean) => void;
-    moviesList: IMovie;
+    sliderList: ISliderDetails;
 }
 
-function Modal({closeModal,moviesList}: ModalProps) {
+function SliderModal({closeModal,sliderList}: ModalProps) {
     const {modal} = cssStyles
     return (
         <modal.Background>
             <modal.Container >
                 <modal.Title >
                     <div>
-                        <p>{moviesList.trailerTitle}</p>
+                        <p>{sliderList.title}</p>
                     </div>
 
                     <modal.TitleBtn
@@ -33,4 +33,4 @@ function Modal({closeModal,moviesList}: ModalProps) {
     );
 }
 
-export default Modal;
+export default SliderModal;

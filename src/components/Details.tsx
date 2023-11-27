@@ -35,7 +35,6 @@ const Details = () => {
 
     function handleClick(): void {
         if (movie && !isFavoriteAdded) {
-            console.log(movie)
             dispatch(addToWatchlist(movie));
 
         } else if (isFavoriteAdded) {
@@ -43,6 +42,7 @@ const Details = () => {
         }
     }
 
+    console.log(movie)
     return (
         <>
             {movie ? (

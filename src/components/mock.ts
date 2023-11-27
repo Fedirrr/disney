@@ -115,32 +115,48 @@ export const moviesArray: IMovie[] = [
 export interface ISliderDetails {
     title:string ,
     imgSource: string,
-    id: string
+    id: string,
+    backgroundImg: string,
+    titleImg: string,
+    description:string,
+    subTitle:string
 }
-export const sliderArray: {
-    title:string ,
-    imgSource: string,
-    id: string
-}[] = [
+export const sliderArray: ISliderDetails[] = [
     {
         title:"1" ,
         imgSource: "/images/slider-badging.jpg",
+        backgroundImg:"",
+        titleImg:"",
+        description:"",
+        subTitle:"",
         id:"1"
     },
     {
         title:"2" ,
         imgSource: "/images/slider-scale.jpg",
+        backgroundImg:"https://images7.alphacoders.com/112/1129455.jpg",
+        titleImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/WandaVision_Episode_1_title_card_logo.svg/2560px-WandaVision_Episode_1_title_card_logo.svg.png",
+        description:"",
+        subTitle:"",
         id:"2"
     },
     {
         title:"3" ,
         imgSource:"/images/slider-badag.jpg"  ,
+        backgroundImg:"",
+        titleImg:"",
+        description:"",
+        subTitle:"",
         id:"3"
     },
 
     {
         title:"4" ,
         imgSource: "/images/slider-scales.jpg",
+        backgroundImg:"",
+        titleImg:"",
+        description:"",
+        subTitle:"",
         id:"4"
     },
 
