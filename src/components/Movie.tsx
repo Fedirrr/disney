@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {setMovies} from '../store/slices/slice';
+import {setMovies} from '../store/slices/movieSlice';
 import {useDispatch} from 'react-redux';
 import cssStyles from '../styles/styles';
 import {IMovie, moviesArray} from "./mock";

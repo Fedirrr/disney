@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import Alert from "./Alert";
 import {moviesArray, IMovie} from "./mock";
-import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchListSlice";
+import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchListSlice"
 import cssStyles from "../styles/styles";
 import Modal from "./Modal";
 

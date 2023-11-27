@@ -163,32 +163,42 @@ export const sliderArray: ISliderDetails[] = [
 
 
 ]
-export const viewersArray: {
+
+export interface IViewers {
     imgSource: string,
-    videoSource: string
-}[] = [
+    videoSource: string,
+    id: string
+}
+export const viewersArray: IViewers[] = [
     {
         imgSource: "/images/viewers-disney.png",
-        videoSource: "/videos/1564674844-disney.mp4"
+        videoSource: "/videos/1564674844-disney.mp4",
+        id: "disney"
     },
     {
         imgSource: "/images/viewers-pixar.png",
-        videoSource: "/videos/1564676714-pixar.mp4"
+        videoSource: "/videos/1564676714-pixar.mp4",
+        id: "pixar"
+
     },
     {
         imgSource: "/images/viewers-marvel.png",
-        videoSource: "/videos/1564676115-marvel.mp4"
+        videoSource: "/videos/1564676115-marvel.mp4",
+        id: "marvel"
+
     },
     {
         imgSource: "/images/viewers-starwars.png",
-        videoSource: "/videos/1608229455-star-wars.mp4"
+        videoSource: "/videos/1608229455-star-wars.mp4",
+        id: "star-wars"
+
     },
     {
         imgSource: "/images/viewers-national.png",
-        videoSource: "/videos/1564676296-national-geographic.mp4"
+        videoSource: "/videos/1564676296-national-geographic.mp4",
+        id: "geographic"
+
     },
 
 ];
-
-
 

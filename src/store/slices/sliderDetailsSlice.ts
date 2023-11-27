@@ -1,14 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {ISliderDetails} from "../../components/mock";
+import {IState} from "../types/redux";
 
-// interface for initialState
 interface ISliderListInitialState {
     item : ISliderDetails[] | null;
-}
-
-// interface for selectSliderMovie
-interface ISliderListState {
-    sliderDetails: ISliderListInitialState
 }
 
 const initialState:ISliderListInitialState = {
@@ -26,4 +21,4 @@ export const sliderListSlice = createSlice({
     }
 });
 export const {setSliderDetails} = sliderListSlice.actions;
-export const selectSliderDetails = (state:ISliderListState) => state.sliderDetails.item;
+export const selectSliderDetails = (state:IState) => state.sliderDetails.item;

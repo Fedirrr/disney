@@ -15,11 +15,34 @@ function WatchList() {
     };
 
     console.log(watchItems)
+
+    // return (
+    //     <movie.Container>
+    //         {!!watchItems?.length ?
+    //             (<movie.Content>
+    //                 {
+    //                     !!watchItems?.length && watchItems.map(({id, backgroundImg, cardImg}) => (
+    //                         <movie.Wrap key={id}>
+    //                             <Link to={/details/${id}}>
+    //                                 <img
+    //                                     src={backgroundImg}
+    //                                     alt={cardImg}/>
+    //                             </Link>
+    //                         </movie.Wrap>
+    //                     ))
+    //                 }
+    //             </movie.Content>) : <div>Add some movies to your watchlist</div>
+    //         }
+    //     </movie.Container>
+    // );
+    //
+    //
     return (
         <movie.Container>
-            {!!watchItems.length ? (
+            {!!watchItems?.length ? (
                 <movie.Content>
-                    {watchItems.map(({ id, backgroundImg, cardImg, title }) => (
+                    {
+                        !!watchItems?.length && watchItems.map(({ id, backgroundImg, cardImg, title }) => (
                         <movie.Wrap key={id}>
                             <Link to={`/details/${id}`}>
                                 <img src={backgroundImg} alt={cardImg} />
@@ -36,6 +59,7 @@ function WatchList() {
             )}
         </movie.Container>
     );
+
 }
 
 export default WatchList;

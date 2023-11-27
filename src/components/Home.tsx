@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import ImgSlider from "./ImgSlider";
 import Viewers from "./Viewers";
 import HomeMovies from "./HomeMovies";
-import {setMovies} from "../store/slices/slice";
+import {setMovies} from "../store/slices/movieSlice";
 import cssStyles from "../styles/styles";
 import {fetchMovies} from "../api/movies";
 

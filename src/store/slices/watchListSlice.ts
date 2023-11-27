@@ -1,16 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {IMovie} from "../../components/mock";
+import {IState} from "../types/redux";
 
 const savedData = localStorage.getItem("watchListItems");
 const list = savedData !== null ? JSON.parse(savedData) : [];
 interface IWatchListInitialState {
     watchlistItems : IMovie[],
-}
-
-interface IWatchListState {
-    watchList: {
-        watchlistItems: IMovie[]
-    }
 }
 
 const initialState:IWatchListInitialState = {
@@ -32,4 +27,4 @@ export const watchlistSlice = createSlice({
 })
 
 export const {addToWatchlist,deleteFromWatchlist} = watchlistSlice.actions
-export const selectListItem = (state:IWatchListState) => state.watchList.watchlistItems;
+export const selectListItem = (state:IState) => state.watchList.watchlistItems;
