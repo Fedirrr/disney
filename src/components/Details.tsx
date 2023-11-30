@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import Alert from "./Alert";
@@ -16,6 +16,7 @@ const Details = () => {
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
     const [modal, setModal] = useState(false);
+
     useEffect(() => {
         if (id) {
             const foundMovie = moviesArray.find((movie) => movie.id === id);
@@ -43,7 +44,7 @@ const Details = () => {
         <>
             {movie ? (
                 <details.Container>
-                    {<Modal closeModal={setModal} moviesList={movie}/>}
+                    {modal && <Modal closeModal={setModal} moviesList={movie}/>}
                     <details.Background>
                         <img src={movie.cardImg} alt="cardImg"/>
                     </details.Background>

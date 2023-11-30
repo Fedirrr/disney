@@ -1,4 +1,3 @@
-
 export interface IMovie {
     titleImg: string;
     backgroundImg: string;
@@ -22,7 +21,7 @@ export const moviesArray: IMovie[] = [
         title: "onward",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Onward Official Trailer",
+        trailerTitle: "Onward Official Trailer",
         id: "1",
     },
     {
@@ -35,7 +34,7 @@ export const moviesArray: IMovie[] = [
         title: "bao",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Bao Official Trailer",
+        trailerTitle: "Bao Official Trailer",
         id: "2",
 
     },
@@ -48,7 +47,7 @@ export const moviesArray: IMovie[] = [
         title: "simpsons",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"The Simpsons Official Trailer",
+        trailerTitle: "The Simpsons Official Trailer",
         id: "3",
     },
     {
@@ -60,7 +59,7 @@ export const moviesArray: IMovie[] = [
         title: "hamilton",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Hamilton Official Trailer",
+        trailerTitle: "Hamilton Official Trailer",
         id: "4",
     },
     {
@@ -72,7 +71,7 @@ export const moviesArray: IMovie[] = [
         title: "spider man",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Spider Man Official Trailer",
+        trailerTitle: "Spider Man Official Trailer",
         id: "5",
     },
     {
@@ -84,7 +83,7 @@ export const moviesArray: IMovie[] = [
         title: "avengers",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Avengers Official Trailer",
+        trailerTitle: "Avengers Official Trailer",
         id: "6",
     },
     {
@@ -96,7 +95,7 @@ export const moviesArray: IMovie[] = [
         title: "avengers 2",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Avengers Official Trailer",
+        trailerTitle: "Avengers Official Trailer",
         id: "7",
     },
     {
@@ -108,58 +107,99 @@ export const moviesArray: IMovie[] = [
         title: "avengers 3",
         type: "trending",
         trailerSource: "/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4",
-        trailerTitle:"Avengers Official Trailer",
+        trailerTitle: "Avengers Official Trailer",
         id: "8",
     },
 ];
+
 export interface ISliderDetails {
-    title:string ,
-    imgSource: string,
-    id: string,
-    backgroundImg: string,
-    titleImg: string,
-    description:string,
-    subTitle:string
+    title: string;
+    imgSource: string;
+    id: string;
+    backgroundTrailer: string;
+    titleImg: string;
+    description: string;
+    subTitle: string;
+    age: string;
+    starring: string;
+    duration: string;
+    imdbRating: string;
+    infoAboutMovie:string;
+    descriptionTitle:string;
+    director:string;
+    genre:string;
 }
+
 export const sliderArray: ISliderDetails[] = [
     {
-        title:"1" ,
-        imgSource: "/images/slider-badging.jpg",
-        backgroundImg:"",
-        titleImg:"",
-        description:"",
-        subTitle:"",
-        id:"1"
+        title: "Moon Knight",
+        imgSource: "/images/Moon%20Knight%20Superhero_xtrafondos.com.jpg",
+        backgroundTrailer: "/videos/y2mate.com%20-%20Marvel%20Studios%20Moon%20Knight%20%20Official%20Trailer%20%20Disney_720p.mp4",
+        titleImg: "https://artofthemovies.co.uk/cdn/shop/products/IMG_8931_1024x1024@2x.jpg?v=1659543021",
+        description: "Stephen Grant is a cashier in a gift shop in a London museum who suffers from sleepwalking and often loses track of time. One day, Steven discovers that his worst nightmares are beginning to come true, and he is actually sharing his consciousness with a former military mercenary, Mark Specter. Suffering from a personality disorder, Steven transforms into the fearless superhero known as Moon Knight. Meanwhile, cult leader Arthur Harrow, who worships the ancient Egyptian goddess Amat, commits mass murders of people who have bad heredity. Moon Knight enters into a bloody confrontation with Harrow, while trying to understand his multiple personality.",
+        subTitle: "",
+        age: "14+",
+        starring: "Oscar IsaacEthan HawkeMay Calamawy",
+        duration: "4h 47m",
+        imdbRating: "imdbRating: 7.3/10",
+        infoAboutMovie:"March 30, 2022 USA",
+        descriptionTitle:"What is the series “Moon Knight” about:",
+        director:"Mohamed Diab, Justin Benson, Aaron Moorhead",
+        genre:"Fantasy, Sci-Fi, Action, Adventure, Drama, Horror, Foreign",
+        id: "1"
     },
     {
-        title:"2" ,
-        imgSource: "/images/slider-scale.jpg",
-        backgroundImg:"https://images7.alphacoders.com/112/1129455.jpg",
-        titleImg:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/WandaVision_Episode_1_title_card_logo.svg/2560px-WandaVision_Episode_1_title_card_logo.svg.png",
-        description:"",
-        subTitle:"",
-        id:"2"
+        title: "Ratatouille",
+        imgSource: "/images/ratatouille_3840x2160_xtrafondos.com.jpg",
+        backgroundTrailer: "/videos/Ratatouille%20(2007)%20Trailer%20%231%20_%20Movieclips%20Classic%20Trailers.mp4",
+        titleImg: "https://m.media-amazon.com/images/I/717tFz0gmjL._AC_UF894,1000_QL80_.jpg",
+        description: "",
+        subTitle: "",
+        age: "0+",
+        starring: "",
+        duration: "",
+        imdbRating: "imdbRating: 8.1/10",
+        infoAboutMovie:"",
+        descriptionTitle:"",
+        director:"",
+        genre:"",
+        id: "2"
     },
     {
-        title:"3" ,
-        imgSource:"/images/slider-badag.jpg"  ,
-        backgroundImg:"",
-        titleImg:"",
-        description:"",
-        subTitle:"",
-        id:"3"
+        title: " Marvel Studios Eternals",
+        imgSource: "https://www.xtrafondos.com/wallpapers/resized/pelicula-eternals-8500.jpg?s=large",
+        backgroundTrailer: "/videos/y2mate.com%20-%20Marvel%20Studios%20Eternals%20%20Final%20Trailer_720p.mp4",
+        titleImg: "https://i.redd.it/bu4phdtw2ei71.jpg",
+        description: "",
+        subTitle: "",
+        age: "13+",
+        starring: "",
+        duration: "",
+        imdbRating: "imdbRating: 6.3/10",
+        infoAboutMovie:"",
+        descriptionTitle:"",
+        director:"",
+        genre:"",
+        id: "3"
     },
 
     {
-        title:"4" ,
-        imgSource: "/images/slider-scales.jpg",
-        backgroundImg:"",
-        titleImg:"",
-        description:"",
-        subTitle:"",
-        id:"4"
+        title: "Aquaman",
+        imgSource: "https://www.xtrafondos.com/wallpapers/aquaman-y-el-reino-perdido-11972.jpg",
+        backgroundTrailer: "/videos/Aquaman%20-%20Official%20Trailer%201%20-%20Now%20Playing%20In%20Theaters.mp4",
+        titleImg: "https://i.pinimg.com/originals/b2/32/26/b23226caecee7a8c198877e79c83a4d7.jpg",
+        description: "",
+        subTitle: "",
+        age: "13+",
+        starring: "",
+        duration: "",
+        imdbRating: "imdbRating: 6.8/10",
+        infoAboutMovie:"",
+        descriptionTitle:"",
+        director:"",
+        genre:"",
+        id: "4"
     },
-
 
 
 ]
@@ -169,6 +209,7 @@ export interface IViewers {
     videoSource: string,
     id: string
 }
+
 export const viewersArray: IViewers[] = [
     {
         imgSource: "/images/viewers-disney.png",

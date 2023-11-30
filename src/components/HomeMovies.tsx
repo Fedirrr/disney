@@ -13,6 +13,7 @@ const HomeMovies = () => {
             <movie.Content>
                 {
                     !!movies?.length && movies?.map(({id, backgroundImg, cardImg}) => (
+
                         <movie.Wrap key={id}>
                             <Link to={`/details/${id}`}>
                                 <img

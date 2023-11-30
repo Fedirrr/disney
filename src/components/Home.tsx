@@ -5,12 +5,23 @@ import Viewers from "./Viewers";
 import HomeMovies from "./HomeMovies";
 import {setMovies} from "../store/slices/movieSlice";
 import cssStyles from "../styles/styles";
-import {fetchMovies} from "../api/movies";
+import {fetchMovies, fetchSliderDetailsById} from "../api/movies";
+import {useParams} from "react-router-dom";
+import {setSliderDetails} from "../store/slices/sliderDetailsSlice";
 
 const {home} = cssStyles
 
 const Home = () => {
     const dispatch = useDispatch();
+
+    const {id} = useParams();
+    useEffect(() => {
+        if (id) {
+            fetchSliderDetailsById(id).then(res => {
+                dispatch(setSliderDetails(res));
+            });
+        }
+    }, [id, dispatch]);
 
     useEffect(() => {
         fetchMovies().then(res => {

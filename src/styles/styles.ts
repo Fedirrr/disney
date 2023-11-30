@@ -482,14 +482,25 @@ const cssStyles = {
           justify-content: space-between;
           padding: 0 5px;
         `,
-        TitleBtn:styled.button`
+        TitleBtn: styled.button`
           background-color: transparent;
           color: whitesmoke;
           border: none;
           font-size: 25px;
           cursor: pointer;
         `,
-    }
+    },
+    sliderDetailsStyles: {
+        Container: styled.div`
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+
+          div {
+            margin-top: 15px;
+          }
+        `
+    },
 
 }
 

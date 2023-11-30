@@ -22,6 +22,5 @@ export const movieSlice = createSlice({
     }
 })
 
-export const { reducer} = movieSlice;
 export const {setMovies} = movieSlice.actions;
 export const selectMovie = (state:IState) => state.movie.movies;
