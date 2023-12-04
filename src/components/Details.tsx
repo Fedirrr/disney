@@ -39,7 +39,6 @@ const Details = () => {
             dispatch(deleteFromWatchlist(movie?.id));
         }
     }
-
     return (
         <>
             {movie ? (
@@ -66,9 +65,6 @@ const Details = () => {
                              {isFavoriteAdded ? "★" : "☆"}
                             </span>
                         </details.AddButton>
-                        <details.GroupWatchButton>
-                            <img src="/images/group-icon.png"/>
-                        </details.GroupWatchButton>
                     </details.Controls>
                     <details.SubTitle>
                         {movie.subTitle}

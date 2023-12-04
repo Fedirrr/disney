@@ -495,13 +495,75 @@ const cssStyles = {
           padding: 20px;
           display: flex;
           flex-direction: column;
+        `,
 
-          div {
-            margin-top: 15px;
+        MovieDescriptionContainer: styled.div`
+          padding: 80px;
+          border: 1px solid white;
+          margin-top: 100px;
+          border-radius: 6px;
+        `,
+        MovieDescriptionContent: styled.div`
+          display: flex;
+        `,
+        MovieDescriptionPoster: styled.img`
+          width: 300px;
+        `,
+        MovieWrapDescriptionInfo: styled.div`
+          margin-left: 50px;
+        `,
+        MovieTitleDescription: styled.span`
+          text-decoration: underline;
+          text-decoration-color: white;
+          text-decoration-thickness: 2px;
+        `,
+        MovieDescriptionInfo:styled.div`
+          dl{
+            display: flex;
+            align-items: flex-start;
+          }
+          dt {
+            width: 120px;
+            margin-right: 40px;
+          }
+          dd{
+            margin: 0;
           }
         `
     },
+    aboutCompany:{
+        CompanyContainer: styled.div`
+          paddingTop: "100px"
+        `,
+        BackgroundImageContainer:styled.div`
+          position: relative;
+          overflow: hidden;
+          height: 100vh;
+        `,
+        BackgroundImage:styled.img`
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100%;
+          object-fit: cover;
+        `,
+        BackgroundImageTextWrap:styled.div`
+          position: absolute;
+          top: 50%;
+          left:50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          
+          h1{
+            font-family: Monorail;
+            text-shadow: 3px 3px 10px #000;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+          }
+        `
 
+    }
 }
 
 export default cssStyles;

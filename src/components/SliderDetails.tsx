@@ -36,78 +36,50 @@ const SliderDetails = () => {
         }
     }, [id]);
 
-    const toggleMute = () => {
-        setIsMuted(!isMuted);
-    };
-
-
     return (
         <>
             {id && movie ? (
                 <sliderDetailsStyles.Container>
                     {modal && <SliderModal closeModal={() => setModal(false)} sliderList={movie}/>}
 
-                    <div className="movieDescriptionContainer"
-                         style={{
-                             padding: "80px",
-                             border: "1px solid white",
-                             marginTop: "100px",
-                             borderRadius: "6px"
-
-                         }}>
-                        <div className="movieDescriptionContent"
-                             style={{
-                                 display: "flex",
-                             }}>
-
-                            <div className="movieDescriptionPoster">
-                                <img style={{width: "300px"}} src={movie.titleImg} alt=""/>
+                    <sliderDetailsStyles.MovieDescriptionContainer>
+                        <sliderDetailsStyles.MovieDescriptionContent>
+                            <div>
+                                <sliderDetailsStyles.MovieDescriptionPoster src={movie.titleImg} alt={movie.title}/>
                             </div>
 
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    marginLeft: "50px"
-                                }}
-                            >
+                            <sliderDetailsStyles.MovieWrapDescriptionInfo>
 
-                            <span
-                                style={{
-                                    textDecoration: "underline",
-                                    textDecorationColor: "white",
-                                    textDecorationThickness: "2px"
-                                }}>
-                                Description
-                            </span>
+                                <sliderDetailsStyles.MovieTitleDescription>
+                                    Description
+                                </sliderDetailsStyles.MovieTitleDescription>
 
 
-                                <div className="movieDescriptionInfo">
-                                    <dl style={{display: "flex", alignItems: "flex-start"}}>
-                                        <dt style={{width: "120px", marginRight: "40px"}}>Release date:</dt>
-                                        <dd
-                                            style={{margin: 0}}>{movie.infoAboutMovie}</dd>
+                                <sliderDetailsStyles.MovieDescriptionInfo>
+                                    <dl>
+                                        <dt>Release date:</dt>
+                                        <dd>{movie.infoAboutMovie}</dd>
                                     </dl>
-                                    <dl style={{display: "flex", alignItems: "flex-start"}}>
-                                        <dt style={{width: "120px", marginRight: "40px"}}>Duration:</dt>
-                                        <dd style={{margin: 0}}>{movie.duration}</dd>
+                                    <dl>
+                                        <dt>Duration:</dt>
+                                        <dd>{movie.duration}</dd>
                                     </dl>
-                                    <dl style={{display: "flex", alignItems: "flex-start"}}>
+                                    <dl>
                                         <dt style={{width: "120px", marginRight: "40px"}}>Stars:</dt>
-                                        <dd style={{margin: 0}}>{movie.starring}</dd>
+                                        <dd>{movie.starring}</dd>
                                     </dl>
-                                    <dl style={{display: "flex", alignItems: "flex-start"}}>
-                                        <dt style={{width: "120px", marginRight: "40px"}}>Director:</dt>
-                                        <dd style={{margin: 0}}>{movie.director}</dd>
+                                    <dl>
+                                        <dt>Director:</dt>
+                                        <dd>{movie.director}</dd>
                                     </dl>
-                                    <dl style={{display: "flex", alignItems: "flex-start"}}>
-                                        <dt style={{width: "120px", marginRight: "40px"}}>Genre:</dt>
-                                        <dd style={{margin: 0}}>{movie.genre}</dd>
+                                    <dl>
+                                        <dt>Genre:</dt>
+                                        <dd>{movie.genre}</dd>
                                     </dl>
 
-                                </div>
-                            </div>
-                        </div>
+                                </sliderDetailsStyles.MovieDescriptionInfo>
+                            </sliderDetailsStyles.MovieWrapDescriptionInfo>
+                        </sliderDetailsStyles.MovieDescriptionContent>
                         <div>
                             <h2>
                                 {movie.descriptionTitle}
@@ -116,7 +88,7 @@ const SliderDetails = () => {
                                 {movie.description}
                             </span>
                         </div>
-                    </div>
+                    </sliderDetailsStyles.MovieDescriptionContainer>
                     <div className="movieTitleContainer">
 
                         {movie.backgroundTrailer && (

@@ -8,7 +8,7 @@ export interface IAboutCompanyInitialState {
 }
 
 export interface ISliderListInitialState {
-    item : ISliderDetails[] | null;
+    item : ISliderDetails | null;
 }
 
 export interface IWatchListInitialState {
