@@ -37,8 +37,7 @@ const AboutCompany = () => {
                                     <h1>{company.companyTitle}</h1>
                                 </aboutCompany.BackgroundImageTextWrap>
                             </aboutCompany.BackgroundImageContainer>
-
-
+                            <img src="" alt=""/>
                             <div className="block2_text_block" style={{
                                 padding: "50px"
                             }}>
@@ -50,6 +49,7 @@ const AboutCompany = () => {
                         style={{padding: "100px"}}>
                         Company is not found
                     </div>
+                
             }
         </div>
 

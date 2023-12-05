@@ -11,6 +11,7 @@ interface ModalProps {
 function Modal({closeModal,moviesList}: ModalProps) {
     const {modal} = cssStyles
     return (
+
         <modal.Background>
             <modal.Container >
                 <modal.Title >
@@ -26,7 +27,7 @@ function Modal({closeModal,moviesList}: ModalProps) {
                     </modal.TitleBtn>
                 </modal.Title>
                 <Video>
-                    <source src="/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4"/>
+                    <source src={moviesList.trailerSource}/>
                 </Video>
             </modal.Container>
         </modal.Background>
