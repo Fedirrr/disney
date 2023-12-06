@@ -76,6 +76,13 @@ const SliderDetails = () => {
                                         <dt>Genre:</dt>
                                         <dd>{movie.genre}</dd>
                                     </dl>
+                                    <dl>
+                                        <dt>Trailer</dt>
+                                        <dd>
+                                            <img src="/images/play-icon-white.png"
+                                                 onClick={() => setModal(!modal)}/>
+                                        </dd>
+                                    </dl>
 
                                 </sliderDetailsStyles.MovieDescriptionInfo>
                             </sliderDetailsStyles.MovieWrapDescriptionInfo>
@@ -89,101 +96,6 @@ const SliderDetails = () => {
                             </span>
                         </div>
                     </sliderDetailsStyles.MovieDescriptionContainer>
-                    <div className="movieTitleContainer">
-
-                        {movie.backgroundTrailer && (
-                            <div
-                                style={{
-                                    position: "relative",
-                                    top: 0,
-                                    left: 0,
-                                    overflow: "hidden"
-                                }}
-                            >
-                                <div>
-                                    <video autoPlay loop playsInline muted={isMuted} style={{width: "100%"}}>
-                                        <source src={movie.backgroundTrailer} type="video/mp4"/>
-                                    </video>
-
-                                </div>
-                                <button style={{
-                                    position: "absolute",
-                                    top: "80px",
-                                    right: "80px",
-                                    borderRadius: "50%",
-                                    backgroundColor: "rgba(0, 0, 0, 0.05)",
-                                    border: "1px solid white",
-                                    color: "white",
-                                    fontSize: '20px',
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    padding: "5px",
-                                }}
-                                        onClick={() => setIsMuted(!isMuted)}>
-                                    {isMuted ? <FaVolumeMute/> : <FaVolumeUp/>}
-                                </button>
-
-                                <div className="movieCardInfo"
-                                     style={{
-                                         display: "flex",
-                                         position: "absolute",
-                                         bottom: 0,
-                                         left: 0,
-                                         marginLeft: "25px",
-                                         marginBottom: "15px",
-                                     }}>
-
-                                    <div className="movieCPoster">
-                                        <img style={{width: "250px"}}
-                                             src={movie.titleImg} alt=""/>
-                                    </div>
-                                    <div className="movieCardInfoPanel"
-                                         style={{marginLeft: "55px", display: "flex", flexDirection: "column"}}>
-                                        <div className="movieCardInfoTop">
-                                            <ul style={{display: "flex", listStyle: "none"}}>
-                                                <li style={{
-                                                    marginRight: "15px",
-                                                    fontSize: "13px",
-                                                    fontStyle: "normal",
-                                                    fontWeight: 600,
-                                                    letterSpacing: ".3px",
-                                                    textTransform: "uppercase",
-                                                    overflow: "hidden",
-                                                    textOverflow: "ellipsis"
-                                                }}>{movie.title}</li>
-                                                <li style={{
-                                                    marginRight: "15px",
-                                                    fontSize: "13px",
-                                                    fontStyle: "normal",
-                                                    fontWeight: 600,
-                                                    letterSpacing: ".3px",
-                                                    textTransform: "uppercase",
-                                                    overflow: "hidden",
-                                                    textOverflow: "ellipsis",
-                                                    whiteSpace: "nowrap"
-                                                }}>{movie.imdbRating}</li>
-                                                <li style={{
-                                                    marginRight: "15px",
-                                                    fontSize: "13px",
-                                                    fontStyle: "normal",
-                                                    fontWeight: 600,
-                                                    letterSpacing: ".3px",
-                                                    textTransform: "uppercase",
-                                                    overflow: "hidden",
-                                                    textOverflow: "ellipsis",
-                                                    whiteSpace: "nowrap"
-                                                }}>{movie.age}</li>
-                                            </ul>
-                                        </div>
-                                        <h1>
-                                            {movie.title}
-                                        </h1>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
                 </sliderDetailsStyles.Container>
             ) : (
                 <p style={{

@@ -11,8 +11,11 @@ interface ModalProps {
 function SliderModal({closeModal, sliderList}: ModalProps) {
     const {modal} = cssStyles
     return (
-        <modal.Background>
-            <modal.Container >
+        <modal.Background
+            onClick={() => {
+                closeModal(false);
+            }}>
+            <modal.Container>
                 <modal.Title >
                     <div>
                         <p>{sliderList.title}</p>
@@ -25,9 +28,13 @@ function SliderModal({closeModal, sliderList}: ModalProps) {
                         X
                     </modal.TitleBtn>
                 </modal.Title>
-                <Video>
-                    <source src="/videos/The%20Simpsons%20Movie%20-%201080p%20Trailer.mp4"/>
-                </Video>
+                <iframe
+                    style={{width: "100%"}}
+                    width="100%" height="100%" src={sliderList.backgroundTrailer}
+                    title="YouTube video player" frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen>
+                </iframe>
             </modal.Container>
         </modal.Background>
     );

@@ -26,9 +26,11 @@ function Modal({closeModal,moviesList}: ModalProps) {
                         X
                     </modal.TitleBtn>
                 </modal.Title>
-                <Video>
-                    <source src={moviesList.trailerSource}/>
-                </Video>
+                <iframe width="100%" height="100%" src={moviesList.trailerSource}
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen>
+                </iframe>
             </modal.Container>
         </modal.Background>
     );

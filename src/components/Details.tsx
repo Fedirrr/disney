@@ -39,8 +39,10 @@ const Details = () => {
             dispatch(deleteFromWatchlist(movie?.id));
         }
     }
+
     return (
         <>
+
             {movie ? (
                 <details.Container>
                     {modal && <Modal closeModal={setModal} moviesList={movie}/>}
@@ -58,7 +60,9 @@ const Details = () => {
                         <details.TrailerButton>
                             <img src="/images/play-icon-white.png"/>
                             <span
-                            onClick={() => setModal(!modal)}>Trailer</span>
+                                onClick={() => setModal(!modal)}>
+                                Trailer
+                            </span>
                         </details.TrailerButton>
                         <details.AddButton>
                             <span onClick={handleClick}>
