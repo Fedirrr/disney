@@ -164,7 +164,7 @@ export const sliderArray: ISliderDetails[] = [
     },
     {
         title: " Marvel Studios Eternals",
-        imgSource: "https://www.xtrafondos.com/wallpapers/resized/pelicula-eternals-8500.jpg?s=large",
+        imgSource: "https://e0.pxfuel.com/wallpapers/894/652/desktop-wallpaper-avengers-endgame-final-battle-scene-resolution-background-and.jpg",
         backgroundTrailer: "https://www.youtube.com/embed/x_me3xsvDgk?si=P-MrgSPKX-32tcY2",
         titleImg: "https://i.redd.it/bu4phdtw2ei71.jpg",
         description: "The Eternals are an ancient race of aliens who arrived on Earth more than 7 thousand years ago to protect humanity from galactic monsters called Deviants. Having completed their mission, ten powerful warriors, secretly living among people, do not interfere in wars and conflicts, only slightly stimulating technological progress on the planet. Nowadays, after the victory of the Avengers team over Thanos and the formation of the Flash, the Earth finds itself on the threshold of the so-called “Awakening”, which should lead to its inevitable destruction. The main characters have only a week to find a way to save humanity, to which they have become attached.",

@@ -63,12 +63,14 @@ const Carousel = styled(Slider)`
 const Wrap = styled.div`
   cursor: pointer;
   height: 400px;
+  position: relative;
   img {
     border: 4px solid transparent;
     margin: 5px;
     width: 100%;
     height: 100%;
-    
+    //object-position: center top;
+
     object-fit: cover;
     border-radius: 4px;
     box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px,
