@@ -12,9 +12,8 @@ const SliderDetails = () => {
     const {sliderDetailsStyles} = cssStyles;
     const {id} = useParams();
     const dispatch = useDispatch();
-    const [modal, setModal] = useState(false);
+    const [isModal, setIsModal] = useState(false);
     const [movie, setMovie] = useState<ISliderDetails | null>(null);
-    const [isMuted, setIsMuted] = useState(true);
 
     useEffect(() => {
         if (id) {
@@ -35,12 +34,11 @@ const SliderDetails = () => {
             }
         }
     }, [id]);
-
     return (
         <>
             {id && movie ? (
                 <sliderDetailsStyles.Container>
-                    {modal && <SliderModal closeModal={() => setModal(false)} sliderList={movie}/>}
+                    {isModal && <SliderModal closeModal={() => setIsModal(false)} sliderList={movie}/>}
 
                     <sliderDetailsStyles.MovieDescriptionContainer>
                         <sliderDetailsStyles.MovieDescriptionContent>
@@ -53,7 +51,6 @@ const SliderDetails = () => {
                                 <sliderDetailsStyles.MovieTitleDescription>
                                     Description
                                 </sliderDetailsStyles.MovieTitleDescription>
-
 
                                 <sliderDetailsStyles.MovieDescriptionInfo>
                                     <dl>
@@ -80,7 +77,7 @@ const SliderDetails = () => {
                                         <dt>Trailer</dt>
                                         <dd>
                                             <img src="/images/play-icon-white.png"
-                                                 onClick={() => setModal(!modal)}/>
+                                                 onClick={() => setIsModal(!isModal)}/>
                                         </dd>
                                     </dl>
 

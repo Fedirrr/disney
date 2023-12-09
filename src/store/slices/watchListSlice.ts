@@ -3,9 +3,15 @@ import { IMovie } from "../../components/mock";
 import { IState } from "../types/redux";
 
 const getLocalStorageData = () => {
-    const localStorageData = localStorage.getItem("watchlist");
-    return localStorageData ? JSON.parse(localStorageData) : [];
+    try {
+        const localStorageData = localStorage.getItem("watchlist");
+        return localStorageData ? JSON.parse(localStorageData) : [];
+    } catch (error) {
+        console.error("Error while retrieving data from localStorage:", error);
+        return [];
+    }
 };
+
 
 interface IWatchListInitialState {
     watchlistItems: IMovie[];

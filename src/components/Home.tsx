@@ -8,7 +8,7 @@ import cssStyles from "../styles/styles";
 import {fetchMovies, fetchSliderDetailsById} from "../api/movies";
 import {useParams} from "react-router-dom";
 import {setSliderDetails} from "../store/slices/sliderDetailsSlice";
-import {setSCompanyDetails} from "../store/slices/aboutCompanySlice";
+import {setCompanyDetails} from "../store/slices/aboutCompanySlice";
 import {viewersArray} from "./mock";
 
 const {home} = cssStyles
@@ -22,7 +22,7 @@ const Home = () => {
             fetchSliderDetailsById(id).then(res => {
                 dispatch(setSliderDetails(res));
             });
-            dispatch(setSCompanyDetails(viewersArray))
+            dispatch(setCompanyDetails(viewersArray))
         }
     }, [dispatch]);
 

@@ -561,9 +561,16 @@ const cssStyles = {
             letter-spacing: .2rem;
             text-transform: uppercase;
           }
+        `,
+        NotFoundCompany:styled.div`
+        padding: 100px
         `
-
     },
+    Iframe:styled.iframe`
+      width: 100%;
+      height: 100%;
+    `
+
 }
 
 export default cssStyles;

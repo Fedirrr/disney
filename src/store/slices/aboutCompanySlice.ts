@@ -15,10 +15,10 @@ export const companySlice = createSlice({
     name: "aboutCompany",
     initialState,
     reducers: {
-        setSCompanyDetails: (state, action) => {
+        setCompanyDetails: (state, action) => {
             state.aboutCompanyState = action.payload
         }
     },
 })
-export const {setSCompanyDetails} = companySlice.actions;
+export const {setCompanyDetails} = companySlice.actions;
 export const selectCompany = (state:IState) => state.aboutCompany.aboutCompanyState

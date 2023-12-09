@@ -15,7 +15,7 @@ const Details = () => {
 
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
-    const [modal, setModal] = useState(false);
+    const [isModal, setIsModal] = useState(false);
 
     useEffect(() => {
         if (id) {
@@ -45,7 +45,7 @@ const Details = () => {
 
             {movie ? (
                 <details.Container>
-                    {modal && <Modal closeModal={setModal} moviesList={movie}/>}
+                    {isModal && <Modal closeModal={setIsModal} moviesList={movie}/>}
                     <details.Background>
                         <img src={movie.cardImg} alt="cardImg"/>
                     </details.Background>
@@ -60,7 +60,7 @@ const Details = () => {
                         <details.TrailerButton>
                             <img src="/images/play-icon-white.png"/>
                             <span
-                                onClick={() => setModal(!modal)}>
+                                onClick={() => setIsModal(!isModal)}>
                                 Trailer
                             </span>
                         </details.TrailerButton>

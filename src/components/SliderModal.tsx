@@ -9,7 +9,7 @@ interface ModalProps {
 }
 
 function SliderModal({closeModal, sliderList}: ModalProps) {
-    const {modal} = cssStyles
+    const {modal,Iframe} = cssStyles
     return (
         <modal.Background
             onClick={() => {
@@ -28,13 +28,12 @@ function SliderModal({closeModal, sliderList}: ModalProps) {
                         X
                     </modal.TitleBtn>
                 </modal.Title>
-                <iframe
-                    style={{width: "100%"}}
-                    width="100%" height="100%" src={sliderList.backgroundTrailer}
+                <Iframe
+                    src={sliderList.backgroundTrailer}
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen>
-                </iframe>
+                </Iframe>
             </modal.Container>
         </modal.Background>
     );

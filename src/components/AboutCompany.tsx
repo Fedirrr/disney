@@ -1,18 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {selectCompany, setSCompanyDetails,} from "../store/slices/aboutCompanySlice";
+import {selectCompany, setCompanyDetails,} from "../store/slices/aboutCompanySlice";
 import {IViewers, viewersArray} from "./mock";
 import cssStyles from "../styles/styles";
 
 const AboutCompany = () => {
+
     const {id} = useParams();
     const comp = useSelector(selectCompany)
     const [company, setCompany] = useState<IViewers | null>(null)
     const dispatch = useDispatch()
     const {aboutCompany} = cssStyles
+
     useEffect(() => {
-        dispatch(setSCompanyDetails(viewersArray))
+        dispatch(setCompanyDetails(viewersArray))
 
     }, []);
 
@@ -22,22 +24,21 @@ const AboutCompany = () => {
             setCompany(foundCompany)
         }
     }, [id, comp]);
-    return (
-        <div>
 
+    return (
+        <>
             {
                 company ? (
                         <aboutCompany.CompanyContainer>
                             <aboutCompany.BackgroundImageContainer>
                                 <aboutCompany.BackgroundImage
                                     src={company.bgCompanyImg}
-                                    alt=""/>
+                                    alt={company.companyTitle}/>
                                 <aboutCompany.BackgroundImageTextWrap
                                 >
                                     <h1>{company.companyTitle}</h1>
                                 </aboutCompany.BackgroundImageTextWrap>
                             </aboutCompany.BackgroundImageContainer>
-                            <img src="" alt=""/>
                             <div className="block2_text_block" style={{
                                 padding: "50px"
                             }}>
@@ -45,13 +46,12 @@ const AboutCompany = () => {
                             </div>
                         </aboutCompany.CompanyContainer>
                     ) :
-                    <div
-                        style={{padding: "100px"}}>
+                    <aboutCompany.NotFoundCompany>
                         Company is not found
-                    </div>
-                
+                    </aboutCompany.NotFoundCompany>
+
             }
-        </div>
+        </>
 
     );
 }
