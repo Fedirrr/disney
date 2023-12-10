@@ -12,7 +12,6 @@ const getLocalStorageData = () => {
     }
 };
 
-
 interface IWatchListInitialState {
     watchlistItems: IMovie[];
 }

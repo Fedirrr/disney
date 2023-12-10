@@ -4,11 +4,11 @@ import {IState} from "../types/redux";
 
 
 interface ISliderListInitialState {
-    item :ISliderDetails[] | null;
+    item: ISliderDetails[] | null;
 }
 
 const initialState:ISliderListInitialState = {
-    item : null,
+    item: null,
 };
 
 export const sliderListSlice = createSlice({

@@ -19,6 +19,7 @@ const Header = () => {
             handleSearch();
         }
     };
+
     return (
         <header.NavBar>
             <header.NavImg>
@@ -52,9 +53,7 @@ const Header = () => {
                     Find
                 </header.FormBtn>
             </header.Form>
-
         </header.NavBar>
     )
 }
-
 export default Header

@@ -6,24 +6,20 @@ import styled from "styled-components";
 import {sliderArray} from "./mock";
 import {Link} from "react-router-dom";
 
-
 const ImgSlider = () => {
-
-
-    let settings = {
+    const settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoPlay: true
-    }
-
+    };
 
     return (
         <Carousel {...settings}>
             {sliderArray.map(({imgSource, id}) => (
-                <Wrap key={imgSource}>
+                <Wrap key={id}>
                     <Link to={`/sliderDetails/${id}`}>
                         <span>
                             <img src={imgSource} alt={`slider-image-${imgSource}`} />
@@ -34,7 +30,6 @@ const ImgSlider = () => {
         </Carousel>
     )
 };
-
 export default ImgSlider;
 
 const Carousel = styled(Slider)`
@@ -69,8 +64,6 @@ const Wrap = styled.div`
     margin: 5px;
     width: 100%;
     height: 100%;
-    //object-position: center top;
-
     object-fit: cover;
     border-radius: 4px;
     box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px,

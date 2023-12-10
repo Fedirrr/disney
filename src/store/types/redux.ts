@@ -1,14 +1,14 @@
 import {IMovie, ISliderDetails, IViewers} from "../../components/mock";
 
 export interface IMovieInitialState {
-    movies : IMovie[] | null;
+    movies: IMovie[] | null;
 }
 export interface IAboutCompanyInitialState {
-    aboutCompanyState: IViewers[] | null
+    aboutCompanyState: IViewers[] | null;
 }
 
 export interface ISliderListInitialState {
-    item : ISliderDetails | null;
+    item: ISliderDetails | null;
 }
 
 export interface IWatchListInitialState {

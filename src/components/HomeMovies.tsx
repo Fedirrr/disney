@@ -6,14 +6,13 @@ import cssStyles from "../styles/styles";
 const {movie} = cssStyles;
 
 const HomeMovies = () => {
-    const movies = useSelector(selectMovie)
+    const movies = useSelector(selectMovie);
+
     return (
         <div>
             <h4>Recommended for You</h4>
             <movie.Content>
-                {
-                    !!movies?.length && movies?.map(({id, backgroundImg, cardImg}) => (
-
+                {!!movies?.length && movies?.map(({id, backgroundImg, cardImg}) => (
                         <movie.Wrap key={id}>
                             <Link to={`/details/${id}`}>
                                 <img

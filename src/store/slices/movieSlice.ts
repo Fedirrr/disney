@@ -4,7 +4,7 @@ import {IState} from "../types/redux";
 
 
 interface IMovieInitialState {
-    movies : IMovie[] | null;
+    movies: IMovie[] | null;
 }
 
 const initialState: IMovieInitialState = {

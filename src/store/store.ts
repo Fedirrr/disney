@@ -4,9 +4,6 @@ import {companySlice} from "./slices/aboutCompanySlice";
 import {watchlistSlice} from "./slices/watchListSlice";
 import {movieSlice} from "./slices/movieSlice";
 
-
-
-
 export const store = configureStore({
     reducer: {
         movie: movieSlice.reducer,
@@ -14,4 +11,4 @@ export const store = configureStore({
         sliderDetails:sliderListSlice.reducer,
         aboutCompany:companySlice.reducer
     }
-})
+});

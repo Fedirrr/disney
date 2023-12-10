@@ -10,7 +10,6 @@ const initialState: IAboutCompanyInitialState = {
     aboutCompanyState: null
 }
 
-
 export const companySlice = createSlice({
     name: "aboutCompany",
     initialState,

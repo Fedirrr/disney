@@ -10,12 +10,10 @@ import {useParams} from "react-router-dom";
 import {setSliderDetails} from "../store/slices/sliderDetailsSlice";
 import {setCompanyDetails} from "../store/slices/aboutCompanySlice";
 import {viewersArray} from "./mock";
-
-const {home} = cssStyles
+const {home} = cssStyles;
 
 const Home = () => {
     const dispatch = useDispatch();
-
     const {id} = useParams();
     useEffect(() => {
         if (id) {
@@ -37,7 +35,6 @@ const Home = () => {
             <ImgSlider/>
             <Viewers/>
             <HomeMovies/>
-
         </home.Container>
     )
 };

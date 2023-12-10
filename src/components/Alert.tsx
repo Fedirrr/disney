@@ -1,10 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import cssStyles from "../styles/styles";
+const {alert} = cssStyles;
 
-const {alert} = cssStyles
 function Alert() {
-
     return (
         <alert.PopUp>
             <alert.PopUpInner>
@@ -16,6 +15,5 @@ function Alert() {
         </alert.PopUp>
     )
 }
-
 export default Alert
 

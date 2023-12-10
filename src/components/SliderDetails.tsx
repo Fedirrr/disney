@@ -1,12 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
-import {setSliderDetails} from '../store/slices/sliderDetailsSlice';
-import {ISliderDetails, sliderArray} from './mock';
-import cssStyles from '../styles/styles';
-import {fetchSliderDetailsById} from '../api/movies';
-import SliderModal from './SliderModal';
-import {FaVolumeUp, FaVolumeMute} from "react-icons/fa";
+import React, {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setSliderDetails} from "../store/slices/sliderDetailsSlice";
+import {ISliderDetails, sliderArray} from "./mock";
+import cssStyles from "../styles/styles";
+import {fetchSliderDetailsById} from "../api/movies";
+import SliderModal from "./SliderModal";
 
 const SliderDetails = () => {
     const {sliderDetailsStyles} = cssStyles;
@@ -14,6 +13,15 @@ const SliderDetails = () => {
     const dispatch = useDispatch();
     const [isModal, setIsModal] = useState(false);
     const [movie, setMovie] = useState<ISliderDetails | null>(null);
+
+    const movieDetails = [
+        { title: "Release date", content: movie?.infoAboutMovie },
+        { title: "Duration", content: movie?.duration },
+        { title: "Stars", content: movie?.starring },
+        { title: "Director", content: movie?.director },
+        { title: "Genre", content: movie?.genre },
+        { title: "Trailer", content: <img src="/images/play-icon-white.png" onClick={() => setIsModal(!isModal)} /> }
+    ];
 
     useEffect(() => {
         if (id) {
@@ -45,42 +53,17 @@ const SliderDetails = () => {
                             <div>
                                 <sliderDetailsStyles.MovieDescriptionPoster src={movie.titleImg} alt={movie.title}/>
                             </div>
-
                             <sliderDetailsStyles.MovieWrapDescriptionInfo>
-
                                 <sliderDetailsStyles.MovieTitleDescription>
                                     Description
                                 </sliderDetailsStyles.MovieTitleDescription>
-
                                 <sliderDetailsStyles.MovieDescriptionInfo>
-                                    <dl>
-                                        <dt>Release date:</dt>
-                                        <dd>{movie.infoAboutMovie}</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Duration:</dt>
-                                        <dd>{movie.duration}</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt style={{width: "120px", marginRight: "40px"}}>Stars:</dt>
-                                        <dd>{movie.starring}</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Director:</dt>
-                                        <dd>{movie.director}</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Genre:</dt>
-                                        <dd>{movie.genre}</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Trailer</dt>
-                                        <dd>
-                                            <img src="/images/play-icon-white.png"
-                                                 onClick={() => setIsModal(!isModal)}/>
-                                        </dd>
-                                    </dl>
-
+                                    {movieDetails.map(({ title,content}) => (
+                                        <dl key={title}>
+                                            <dt>{title}</dt>
+                                            <dd>{content}</dd>
+                                        </dl>
+                                    ))}
                                 </sliderDetailsStyles.MovieDescriptionInfo>
                             </sliderDetailsStyles.MovieWrapDescriptionInfo>
                         </sliderDetailsStyles.MovieDescriptionContent>
@@ -95,9 +78,7 @@ const SliderDetails = () => {
                     </sliderDetailsStyles.MovieDescriptionContainer>
                 </sliderDetailsStyles.Container>
             ) : (
-                <p style={{
-                    padding: "70px"
-                }}>No movies found for the entered id</p>
+                <sliderDetailsStyles.NotFoundMovie>No movies found for the entered id</sliderDetailsStyles.NotFoundMovie>
             )}
 
 

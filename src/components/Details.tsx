@@ -10,9 +10,8 @@ import Modal from "./Modal";
 const Details = () => {
     const {details} = cssStyles;
     const {id} = useParams();
-    const dispatch = useDispatch()
-    const watchItems = useSelector(selectListItem)
-
+    const dispatch = useDispatch();
+    const watchItems = useSelector(selectListItem);
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
     const [isModal, setIsModal] = useState(false);
@@ -34,7 +33,6 @@ const Details = () => {
     function handleClick(): void {
         if (movie && !isFavoriteAdded) {
             dispatch(addToWatchlist(movie));
-
         } else if (isFavoriteAdded) {
             dispatch(deleteFromWatchlist(movie?.id));
         }
@@ -42,7 +40,6 @@ const Details = () => {
 
     return (
         <>
-
             {movie ? (
                 <details.Container>
                     {isModal && <Modal closeModal={setIsModal} moviesList={movie}/>}

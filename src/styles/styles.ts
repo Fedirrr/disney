@@ -496,7 +496,9 @@ const cssStyles = {
           display: flex;
           flex-direction: column;
         `,
-
+        NotFoundMovie:styled.p`
+          padding: 80px;
+        `,
         MovieDescriptionContainer: styled.div`
           padding: 80px;
           border: 1px solid white;
@@ -564,7 +566,10 @@ const cssStyles = {
         `,
         NotFoundCompany:styled.div`
         padding: 100px
-        `
+        `,
+        CompanyDescription:styled.div`
+          padding: 50px
+        `,
     },
     Iframe:styled.iframe`
       width: 100%;

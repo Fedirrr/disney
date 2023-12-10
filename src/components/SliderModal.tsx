@@ -1,30 +1,32 @@
 import React from "react";
 import {DefaultPlayer as Video} from 'react-html5video';
 import 'react-html5video/dist/styles.css';
-import { ISliderDetails} from "./mock";
+import {ISliderDetails} from "./mock";
 import cssStyles from "../styles/styles";
+
 interface ModalProps {
     closeModal: (arg: boolean) => void;
     sliderList: ISliderDetails;
 }
 
 function SliderModal({closeModal, sliderList}: ModalProps) {
-    const {modal,Iframe} = cssStyles
+    const {modal, Iframe} = cssStyles;
+
     return (
         <modal.Background
             onClick={() => {
-                closeModal(false);
-            }}>
+                closeModal(false)}}
+        >
             <modal.Container>
-                <modal.Title >
+                <modal.Title>
                     <div>
                         <p>{sliderList.title}</p>
                     </div>
-
                     <modal.TitleBtn
                         onClick={() => {
                             closeModal(false);
-                        }}>
+                        }}
+                    >
                         X
                     </modal.TitleBtn>
                 </modal.Title>

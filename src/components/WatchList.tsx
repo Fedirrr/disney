@@ -3,9 +3,7 @@ import { useSelector} from "react-redux";
 import { selectListItem,} from "../store/slices/watchListSlice";
 import cssStyles from "../styles/styles";
 import {Link} from "react-router-dom";
-
 const {movie} = cssStyles;
-
 function WatchList() {
     const watchItems = useSelector(selectListItem)
 
