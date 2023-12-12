@@ -130,10 +130,11 @@ const cssStyles = {
           border: none;
         `,
         NavBar: styled.nav`
+          margin-bottom: 1000px;
           position: fixed;
           top: 0;
           left: 0;
-          right: 0;
+          width: 100%;
           height: 70px;
           background-color: #090b13;
           display: flex;
@@ -160,8 +161,7 @@ const cssStyles = {
         flex-flow: row nowrap;
         height: 100%;
         justify-content: flex-end;
-        margin: 0px;
-        padding: 0px;
+        padding: 0;
         position: relative;
         margin-right: auto;
         margin-left: 25px;
@@ -215,7 +215,7 @@ const cssStyles = {
         }
         `,
         Search: styled.input`
-            border: none;
+          border: none;
           outline: none;
           height: 50%;
           width: 20%;
@@ -322,13 +322,20 @@ const cssStyles = {
         `
     },
     movie: {
+
         Container: styled.div`
           min-height: calc(100vh - 70px);
           padding: 100px calc(3.5vw + 5px);
           position: relative;
         `,
+        ContentBlock: styled.div`
+          padding: 100px 50px;
+          display: grid;
+          grid-gap: 25px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        `,
         Content: styled.div`
-          padding: 75px;
           display: grid;
           grid-gap: 25px;
           grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -449,7 +456,126 @@ const cssStyles = {
           position: relative;
         `,
 
-    }
+    },
+    modal: {
+        Background: styled.div`
+          width: 100%;
+          height: 100%;
+          background-color: rgb(0 0 0 / 80%);
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        `,
+        Container: styled.div`
+          width: 60%;
+          height: 55%;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          padding: 25px;
+        `,
+        Title: styled.div`
+          display: flex;
+          justify-content: space-between;
+          padding: 0 5px;
+        `,
+        TitleBtn: styled.button`
+          background-color: transparent;
+          color: whitesmoke;
+          border: none;
+          font-size: 25px;
+          cursor: pointer;
+        `,
+    },
+    sliderDetailsStyles: {
+        Container: styled.div`
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+        `,
+        NotFoundMovie:styled.p`
+          padding: 80px;
+        `,
+        MovieDescriptionContainer: styled.div`
+          padding: 80px;
+          border: 1px solid white;
+          margin-top: 100px;
+          border-radius: 6px;
+        `,
+        MovieDescriptionContent: styled.div`
+          display: flex;
+        `,
+        MovieDescriptionPoster: styled.img`
+          width: 300px;
+        `,
+        MovieWrapDescriptionInfo: styled.div`
+          margin-left: 50px;
+        `,
+        MovieTitleDescription: styled.span`
+          text-decoration: underline;
+          text-decoration-color: white;
+          text-decoration-thickness: 2px;
+        `,
+        MovieDescriptionInfo:styled.div`
+          dl{
+            display: flex;
+            align-items: flex-start;
+          }
+          dt {
+            width: 120px;
+            margin-right: 40px;
+          }
+          dd{
+            margin: 0;
+          }
+        `
+    },
+    aboutCompany:{
+        CompanyContainer: styled.div`
+          paddingTop: "100px"
+        `,
+        BackgroundImageContainer:styled.div`
+          position: relative;
+          overflow: hidden;
+          height: 100vh;
+        `,
+        BackgroundImage:styled.img`
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100%;
+          object-fit: cover;
+        `,
+        BackgroundImageTextWrap:styled.div`
+          position: absolute;
+          top: 50%;
+          left:50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          
+          h1{
+            font-family: Monorail;
+            text-shadow: 3px 3px 10px #000;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+          }
+        `,
+        NotFoundCompany:styled.div`
+        padding: 100px
+        `,
+        CompanyDescription:styled.div`
+          padding: 50px
+        `,
+    },
+    Iframe:styled.iframe`
+      width: 100%;
+      height: 100%;
+    `
+
 }
 
 export default cssStyles;

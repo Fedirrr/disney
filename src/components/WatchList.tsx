@@ -1,20 +1,18 @@
 import React from 'react';
 import { useSelector} from "react-redux";
-import { selectListItem,} from "../store/slices/watchList";
+import { selectListItem,} from "../store/slices/watchListSlice";
 import cssStyles from "../styles/styles";
 import {Link} from "react-router-dom";
-
 const {movie} = cssStyles;
-
 function WatchList() {
     const watchItems = useSelector(selectListItem)
 
     return (
         <movie.Container>
-            {!!watchItems.length ?
+            {!!watchItems?.length ?
                 (<movie.Content>
                     {
-                        !!watchItems.length && watchItems.map(({id, backgroundImg, cardImg}) => (
+                        !!watchItems?.length && watchItems.map(({id, backgroundImg, cardImg}) => (
                             <movie.Wrap key={id}>
                                 <Link to={`/details/${id}`}>
                                     <img

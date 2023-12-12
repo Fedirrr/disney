@@ -1,43 +1,40 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import Alert from "./Alert";
 import {moviesArray, IMovie} from "./mock";
-import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchList";
+import {addToWatchlist, selectListItem, deleteFromWatchlist} from "../store/slices/watchListSlice";
 import cssStyles from "../styles/styles";
+import Modal from "./Modal";
 
 const Details = () => {
-
     const {details} = cssStyles;
     const {id} = useParams();
-    const dispatch = useDispatch()
-    const watchItems = useSelector(selectListItem)
-
+    const dispatch = useDispatch();
+    const watchItems = useSelector(selectListItem);
     const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
     const [movie, setMovie] = useState<IMovie | null>(null);
-
-
-    useEffect(() => {
-        const foundListItem = watchItems.find(item => item.id === id);
-        setIsFavoriteAdded(!!foundListItem)
-    }, [id, watchItems]);
+    const [isModal, setIsModal] = useState(false);
 
     useEffect(() => {
         if (id) {
-            const foundMovie = moviesArray.find(movie => movie.id === id);
-
+            const foundMovie = moviesArray.find((movie) => movie.id === id);
             if (foundMovie) {
                 setMovie(foundMovie);
             }
         }
     }, [id]);
 
+    useEffect(() => {
+        const foundListItem = watchItems?.find((item) => item.id === id);
+        setIsFavoriteAdded(!!foundListItem);
+    }, [id, watchItems]);
 
-    function handleClick() {
+    function handleClick(): void {
         if (movie && !isFavoriteAdded) {
             dispatch(addToWatchlist(movie));
         } else if (isFavoriteAdded) {
-            dispatch(deleteFromWatchlist(id));
+            dispatch(deleteFromWatchlist(movie?.id));
         }
     }
 
@@ -45,6 +42,7 @@ const Details = () => {
         <>
             {movie ? (
                 <details.Container>
+                    {isModal && <Modal closeModal={setIsModal} moviesList={movie}/>}
                     <details.Background>
                         <img src={movie.cardImg} alt="cardImg"/>
                     </details.Background>
@@ -58,16 +56,16 @@ const Details = () => {
                         </details.PlayButton>
                         <details.TrailerButton>
                             <img src="/images/play-icon-white.png"/>
-                            <span>Trailer</span>
+                            <span
+                                onClick={() => setIsModal(!isModal)}>
+                                Trailer
+                            </span>
                         </details.TrailerButton>
                         <details.AddButton>
                             <span onClick={handleClick}>
                              {isFavoriteAdded ? "★" : "☆"}
                             </span>
                         </details.AddButton>
-                        <details.GroupWatchButton>
-                            <img src="/images/group-icon.png"/>
-                        </details.GroupWatchButton>
                     </details.Controls>
                     <details.SubTitle>
                         {movie.subTitle}
@@ -82,6 +80,3 @@ const Details = () => {
 }
 
 export default Details
-
-
-

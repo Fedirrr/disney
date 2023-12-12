@@ -3,17 +3,32 @@ import {useDispatch} from "react-redux";
 import ImgSlider from "./ImgSlider";
 import Viewers from "./Viewers";
 import HomeMovies from "./HomeMovies";
-import {setMovies} from "../store/slices/slice";
-import {moviesArray} from "./mock";
+import {setMovies} from "../store/slices/movieSlice";
 import cssStyles from "../styles/styles";
-
-const {home} = cssStyles
+import {fetchMovies, fetchSliderDetailsById} from "../api/movies";
+import {useParams} from "react-router-dom";
+import {setSliderDetails} from "../store/slices/sliderDetailsSlice";
+import {setCompanyDetails} from "../store/slices/aboutCompanySlice";
+import {viewersArray} from "./mock";
+const {home} = cssStyles;
 
 const Home = () => {
     const dispatch = useDispatch();
-    useEffect(():void => {
-        dispatch(setMovies(moviesArray))
-    }, []);
+    const {id} = useParams();
+    useEffect(() => {
+        if (id) {
+            fetchSliderDetailsById(id).then(res => {
+                dispatch(setSliderDetails(res));
+            });
+            dispatch(setCompanyDetails(viewersArray))
+        }
+    }, [dispatch]);
+
+    useEffect(() => {
+        fetchMovies().then(res => {
+            dispatch(setMovies(res))
+        })
+    }, [dispatch]);
 
     return (
         <home.Container>

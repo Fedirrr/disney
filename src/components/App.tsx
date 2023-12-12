@@ -6,24 +6,26 @@ import Home from "./Home";
 import Details from "./Details";
 import WatchList from "./WatchList";
 import Movie from "./Movie";
+import SliderDetails from "./SliderDetails";
+import AboutCompany from "./AboutCompany";
 
 function App () {
-  return (
-    <div className="App">
-        <Router>
-            <Header/>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/details/:id" element={<Details />} />
-                <Route path="/watchlist" element={<WatchList />} />
-                <Route path="/movie" element={<Movie />} />
-            </Routes>
-        </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/about/:id" element={<AboutCompany />} />
+                    <Route path="/details/:id" element={<Details />} />
+                    <Route path="/sliderDetails/:id" element={<SliderDetails />} />
+                    <Route path="/watchlist" element={<WatchList />} />
+                    <Route path="/movie" element={<Movie />} />
+                </Routes>
+            </Router>
+        </div>
+    );
 }
-
 export default App;
-
 

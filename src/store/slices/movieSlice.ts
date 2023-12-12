@@ -1,13 +1,14 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {IMovie} from "../../components/mock";
+import {IState} from "../types/redux";
 
-interface IState {
-    movie: {
-        movies: IMovie[]
-    }
+
+interface IMovieInitialState {
+    movies: IMovie[] | null;
 }
-const initialState = {
-    movies: [],
+
+const initialState: IMovieInitialState = {
+    movies: null,
 };
 
 
@@ -21,7 +22,5 @@ export const movieSlice = createSlice({
     }
 })
 
-export const { reducer} = movieSlice;
 export const {setMovies} = movieSlice.actions;
 export const selectMovie = (state:IState) => state.movie.movies;
-

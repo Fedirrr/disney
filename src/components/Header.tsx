@@ -19,6 +19,7 @@ const Header = () => {
             handleSearch();
         }
     };
+
     return (
         <header.NavBar>
             <header.NavImg>
@@ -48,13 +49,11 @@ const Header = () => {
                                onKeyPress={handleKeyPress}
                 />
                 <header.FormBtn onClick={handleSearch}
-                disabled={searchTerm ? false : true}>
+                                disabled={!searchTerm}>
                     Find
                 </header.FormBtn>
             </header.Form>
-
         </header.NavBar>
     )
 }
-
 export default Header
