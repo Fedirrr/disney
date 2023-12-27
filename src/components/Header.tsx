@@ -1,10 +1,14 @@
-import React, {useState, ChangeEvent} from "react";
+import React, {useState, ChangeEvent, useEffect} from "react";
 import cssStyles from "../styles/styles";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
+import {auth, provider} from "../firebaseComp";
+import {signInWithPopup} from "firebase/auth"
+import Logout from "./Logout"
+import Login from "./Login"
 
-const {header} = cssStyles
 const Header = () => {
+    const {header} = cssStyles
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +23,18 @@ const Header = () => {
             handleSearch();
         }
     };
+    const [data, setData] = useState("");
+    const handleLogin = () => {
+        signInWithPopup(auth, provider).then((data) => {
+            setData(data.user.photoURL || "")
+            localStorage.setItem("photoURL", data.user.photoURL || "");
+        })
+    }
 
+    useEffect(() => {
+        setData(localStorage.getItem("photoURL") || "" )
+    });
+    console.log(data)
     return (
         <header.NavBar>
             <header.NavImg>
@@ -52,6 +67,11 @@ const Header = () => {
                                 disabled={!searchTerm}>
                     Find
                 </header.FormBtn>
+                {
+                    data ? <Logout data={data}/> :
+                        <Login handleLogin={handleLogin}/>
+                }
+
             </header.Form>
         </header.NavBar>
     )

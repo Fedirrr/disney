@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Login from "./Login";
+import MainPage from "./MainPage";
 import Header from "./Header";
 import Home from "./Home";
 import Details from "./Details";
@@ -10,12 +10,15 @@ import SliderDetails from "./SliderDetails";
 import AboutCompany from "./AboutCompany";
 
 function App () {
+
+
+
     return (
         <div className="App">
             <Router>
                 <Header/>
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/" element={<MainPage />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/about/:id" element={<AboutCompany />} />
                     <Route path="/details/:id" element={<Details />} />

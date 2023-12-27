@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import logout from "../components/Logout";
 
 const cssStyles = {
     details: {
@@ -119,7 +120,9 @@ const cssStyles = {
     header: {
         Form: styled.div`
           width: 100%;
-          display: contents;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
         `,
         FormBtn: styled.button`
           margin-left: 10px;
@@ -246,7 +249,7 @@ const cssStyles = {
           }
         `
     },
-    login: {
+    mainPage: {
         Container: styled.section`
           overflow: hidden;
           display: flex;
@@ -574,8 +577,7 @@ const cssStyles = {
     Iframe:styled.iframe`
       width: 100%;
       height: 100%;
-    `
-
+    `,
 }
 
 export default cssStyles;

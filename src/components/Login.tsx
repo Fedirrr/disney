@@ -1,34 +1,35 @@
-import React from "react";
-import cssStyles from "../styles/styles";
-import {Link} from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
 
-const { login} = cssStyles;
-const Login = () => {
-    return (
-        <login.Container>
-            <login.Content>
-                <login.Cta>
-                    <login.CtaLogoOne src="/images/cta-logo-one.svg"/>
-                    <Link to="/home">
-                        <login.SignUp>
-                            GET ALL THERE
-                        </login.SignUp>
-                    </Link>
-                    <login.Description>
-                        Get Premier Access to Raya and the Last Dragon for an additional fee
-                        with a Disney+ subscription. As of 01/12/23, the price of Disney+
-                        and The Disney Bundle will increase by $1.
-                    </login.Description>
-                    <login.CtaLogoTwo src="/images/cta-logo-two.png"/>
-                </login.Cta>
-                <login.BgImage/>
-            </login.Content>
-        </login.Container>
-    )
+interface LoginProps {
+    handleLogin: () => void;
 };
+
+const Login: React.FC<LoginProps> = ({handleLogin}) => {
+    return (
+        <>
+            <LoginBtn onClick={handleLogin}>Login</LoginBtn>
+        </>
+    );
+};
+
 export default Login;
 
-
-
-
-
+const LoginBtn = styled.button`
+  background-color: rgba(0,0,0,0.6);
+  color: rgb(249, 249, 249);
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  margin-left: 10px;
+  
+  &:hover {
+    background-color: #f9f9f9;
+    color:#000;
+    border-color: transparent;
+    
+  }
+`
