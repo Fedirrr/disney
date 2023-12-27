@@ -10,7 +10,6 @@ const LogOut: React.FC<LogOutProps> = ({data}) => {
         localStorage.clear();
         window.location.reload()
     }
-
     return (
         <LogOutContainer>
             <img src={data} alt=""/>
@@ -49,7 +48,6 @@ const LogOutContainer = styled.div`
     }
   }
 `;
-
 
 const LogOutButton = styled.button`
   padding: 10px;

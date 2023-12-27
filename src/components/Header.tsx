@@ -10,6 +10,7 @@ import Login from "./Login"
 const Header = () => {
     const {header} = cssStyles
     const navigate = useNavigate();
+    const [data, setData] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -23,7 +24,6 @@ const Header = () => {
             handleSearch();
         }
     };
-    const [data, setData] = useState("");
     const handleLogin = () => {
         signInWithPopup(auth, provider).then((data) => {
             setData(data.user.photoURL || "")
@@ -71,7 +71,6 @@ const Header = () => {
                     data ? <Logout data={data}/> :
                         <Login handleLogin={handleLogin}/>
                 }
-
             </header.Form>
         </header.NavBar>
     )
